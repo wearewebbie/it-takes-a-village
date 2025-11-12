@@ -1,4 +1,4 @@
-# Template Project
+# It Takes a Village
 
  This is a project that uses [Eleventy](https://www.11ty.dev/) as a static site generator and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
