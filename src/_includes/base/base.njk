@@ -10,9 +10,14 @@
   <title>TEMPLATE WEBSITE</title>
   <link rel="stylesheet" href="/css/bundle.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>{{ title or site.title }}</title>
+  <meta name="description" content="{{ description or site.description | safe }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
 
-<body class="font-outfit">
+<body class="font-solway bg-cream">
   {% include "header/header.njk" %}
   {{ content | safe }}
   {% include "footer/footer.njk" %}
