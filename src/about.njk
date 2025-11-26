@@ -4,32 +4,31 @@ title: ""
 description: ""
 ---
 
-<section class="py-[180px] relative bg-cream">
+<section class="pt-[180px] pb-[180px] sticky top-0 z-5 bg-cream">
     <div class="container">
         <div class="flex flex-col items-center">
             <h1 class="text-navy heading-1-bold">About</h1>
         </div>
     </div>
+</section>
 
-    <div class="absolute bottom-0 left-0 w-screen h-[100px] overflow-hidden">
+<!-- Top Section -->
+<section class="bg-white py-[80px] relative z-10">
+    <div class="container">
+
+    </div>
+
+    <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
         <img src="/assets/icons/section-cloud.svg" alt=""
             class="absolute inset-0 w-full h-full object-cover object-center" />
     </div>
 </section>
 
-<section class="py-[80px] relative bg-white">
+<!-- Bottom Section -->
+<section class="bg-white py-[80px] z-10 relative mb-[480px]">
     <div class="container">
-        <div class="min-[500px]">
-            About Page content here
-        </div>
-    </div>
-</section>
-
-<!-- Frequently Asked Questions Section -->
-<section class="bg-white py-[80px]">
-    <div class="container h-full">
         <div class="flex flex-col lg:flex-row gap-[20px]">
-            <div class="flex flex-col flex-1 h-full lg:sticky lg:top-[140px] gap-[20px]">
+            <div class="flex flex-col flex-1 gap-[20px]">
                 <h2 class="text-navy heading-4-bold">Frequently Asked Questions</h2>
                 <p class="body-text hidden lg:block">Still have a question? <br />Reach out to us by
                     <a href="mailto:info@centre-screen.com" class="text-teal underline">email</a> or
@@ -157,4 +156,33 @@ description: ""
             </p>
         </div>
     </div>
+
+    <div class="absolute bottom-[-100px] left-0 w-screen h-[100px] overflow-hidden">
+        <img src="/assets/icons/section-cloud.svg" alt=""
+            class="absolute rotate-180 inset-0 w-full h-full object-cover object-center" />
+    </div>
 </section>
+
+<script>
+    document.querySelectorAll('[data-accordion-trigger]').forEach(button => {
+        const content = button.nextElementSibling;
+        const iconPlus = button.querySelector('[data-icon-plus]');
+        const iconMinus = button.querySelector('[data-icon-minus]');
+
+        button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+                content.style.maxHeight = '0';
+                button.setAttribute('aria-expanded', 'false');
+                iconPlus.classList.remove('hidden');
+                iconMinus.classList.add('hidden');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                button.setAttribute('aria-expanded', 'true');
+                iconPlus.classList.add('hidden');
+                iconMinus.classList.remove('hidden');
+            }
+        });
+    });
+</script>
