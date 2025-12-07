@@ -138,37 +138,41 @@
   
 
 <style>
-    .swiper {
+    .swiper-tiktok {
         width: 100%;
         height: 100%;
     }
 
-    .swiper-slide {
+    .swiper-packages {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide-shadow {
+        display: none !important;
+    }
+
+    .swiper-cards {
+        width: 300px;
+        height: 100%;
+    }
+
+    .swiper-slide-packages {
         width: 450px;
         height: 100%;
     }
 
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        color: #012d48;
+        font-size: 20px;
+    }
+
     .swiper-button-next,
     .swiper-button-prev {
-        position: absolute;
-
-        color: var(--color-navy);
-        background-color: var(--color-cream);
-        padding: 20px 22px 20px 22px;
-        border-radius: 100%;
+        left: auto !important;
+        right: auto !important;
     }
-
-    .swiper-button-prev:after,
-    .swiper-button-next:after {
-        font-size: 16px;
-    }
-
-    /* Space them horizontally */
-    .swiper-button-next {
-        left: 60px;
-    }
-
-    .swiper-button-prev {}
 </style>
 
 <section class="pt-[100px] sticky top-0 z-5 bg-cream">
@@ -185,11 +189,14 @@
         </div>
     </div>
 
-    <!-- <img src="./assets/illustrations/landing-1.svg" alt="" class="w-[200px] h-[200px] absolute top-[0px] left-[0px]">
-    <img src="./assets/illustrations/landing-2.svg" alt="" class="w-[200px] h-[200px] absolute top-[0px] right-[0px]">
-    <img src="./assets/illustrations/landing-3.svg" alt="" class="w-[200px] h-[200px] absolute bottom-[0px] left-[0px]">
+    <img src="./assets/illustrations/landing-1.svg" alt=""
+        class="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] absolute top-[80px] left-[50px] lg:top-[100px] lg:left-[200px]">
+    <img src="./assets/illustrations/landing-2.svg" alt=""
+        class="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] absolute top-[150px] right-[20px] lg:top-[150px] lg:right-[30px]">
+    <img src="./assets/illustrations/landing-3.svg" alt=""
+        class="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] absolute bottom-[100px] left-[50px] lg:bottom-[100px] lg:left-[50px]">
     <img src="./assets/illustrations/landing-4.svg" alt=""
-        class="w-[200px] h-[200px] absolute bottom-[0px] right-[0px]"> -->
+        class="w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] absolute bottom-[120px] right-[50px] lg:bottom-[120px] lg:right-[130px]">
 </section>
 
 <!-- About Section -->
@@ -203,21 +210,62 @@
                     find, and we’re here to support you with expert guidance, compassion, and care every step of the
                     way. You’re not alone—we’re in this together.</p>
             </div>
-            <div class="flex gap-[20px] justify-center">
-                <div class="relative h-[400px] w-[300px] border-[20px] border-navy">
-                    <div class="absolute inset-0 m-[-4px] rounded-lg bg-cream pointer-events-none flex justify-center">
-                        <img src="./assets/team-ruth.png" alt="" class="h-[330px] w-[230px] absolute bottom-0">
+            <div class="grid gap-[20px] grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center">
+                <div class="flex flex-col w-full items-start gap-[10px]">
+
+                    <div
+                        class="relative w-full h-full border-[15px] lg:border-[20px] border-navy overflow-hidden rounded-[10px] group flex items-end justify-center bg-cream">
+                        <img src="./assets/team-ruth.png" alt=""
+                            class="w-[200px] lg:w-[250px] h-auto max-h-[400px] object-contain transition-opacity duration-300 lg:group-hover:opacity-0 pt-[20px] lg:pt-[60px] px-[20px]">
+
+                        <div
+                            class="hidden lg:flex absolute inset-0 bg-cream bg-opacity-90 flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
+                            <p class="heading-4-bold text-navy">Hannah</p>
+                            <p class="body-text text-terqoise">Job Title</p>
+                        </div>
                     </div>
+
+                    <div class="flex flex-col items-start lg:hidden pl-[20px]">
+                        <p class="heading-4-bold text-navy">Hannah</p>
+                        <p class="body-text text-terqoise">Job Title</p>
+                    </div>
+
                 </div>
-                <div class="relative h-[400px] w-[300px] border-[20px] border-navy">
-                    <div class="absolute inset-0 m-[-4px] rounded-lg bg-cream pointer-events-none flex justify-center">
-                        <img src="./assets/team-carley.png" alt="" class="h-[330px] w-[230px] absolute bottom-0">
+                <div class="flex flex-col w-full items-start gap-[10px]">
+                    <div
+                        class="relative w-full h-full border-[15px] lg:border-[20px] border-navy overflow-hidden rounded-[10px] group flex items-end justify-center bg-cream">
+                        <img src="./assets/team-carley.png" alt=""
+                            class="w-[200px] lg:w-[250px] h-auto max-h-[400px] object-contain transition-opacity duration-300 lg:group-hover:opacity-0 pt-[20px] px-[20px]">
+
+                        <div
+                            class="hidden lg:flex absolute inset-0 bg-cream bg-opacity-90 flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
+                            <p class="heading-4-bold text-navy">Carley</p>
+                            <p class="body-text text-terqoise">Job Title</p>
+                        </div>
                     </div>
+                    <div class="flex flex-col items-start lg:hidden pl-[20px]">
+                        <p class="heading-4-bold text-navy">Carley</p>
+                        <p class="body-text text-terqoise">Job Title</p>
+                    </div>
+
                 </div>
-                <div class="relative h-[400px] w-[300px] border-[20px] border-navy">
-                    <div class="absolute inset-0 m-[-4px] rounded-lg bg-cream pointer-events-none flex justify-center">
-                        <img src="./assets/team-ruth.png" alt="" class="h-[330px] w-[230px] absolute bottom-0">
+                <div class="flex flex-col w-full items-start gap-[10px]">
+                    <div
+                        class="relative w-full h-full border-[15px] lg:border-[20px] border-navy overflow-hidden rounded-[10px] group flex items-end justify-center bg-cream">
+                        <img src="./assets/team-ruth.png" alt=""
+                            class="w-[200px] lg:w-[250px] h-auto max-h-[400px] object-contain transition-opacity duration-300 lg:group-hover:opacity-0 pt-[20px] px-[20px]">
+                        <div
+                            class="hidden lg:flex absolute inset-0 bg-cream bg-opacity-90 flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
+                            <p class="heading-4-bold text-navy">Ruth</p>
+                            <p class="body-text text-terqoise">Job Title</p>
+                        </div>
                     </div>
+
+                    <div class="flex flex-col items-start lg:hidden pl-[20px]">
+                        <p class="heading-4-bold text-navy">Ruth</p>
+                        <p class="body-text text-terqoise">Job Title</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -234,9 +282,9 @@
     <div class="container">
         <div class="flex flex-col gap-[60px]">
             <h2 class="text-white heading-2-bold text-center">Explore Our Packages</h2>
-            <div class="swiper mySwiper relative">
+            <div class="swiper swiper-packages mySwiperPackages relative">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide swiper-slide-packages">
                         <div class="bg-cream rounded-[10px] p-[30px] h-full w-full">
                             <div class="flex flex-col gap-[20px]">
                                 <div class="flex flex-col gap-[10px]">
@@ -269,7 +317,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide swiper-slide-packages">
                         <div class="bg-cream rounded-[10px] p-[30px] h-full w-full">
                             <div class="flex flex-col gap-[20px]">
                                 <div class="flex flex-col gap-[10px]">
@@ -303,7 +351,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide swiper-slide-packages">
                         <div class="bg-cream rounded-[10px] p-[30px] h-full w-full">
                             <div class="flex flex-col gap-[20px]">
                                 <div class="flex flex-col gap-[10px]">
@@ -337,7 +385,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide swiper-slide-packages">
                         <div class="bg-cream rounded-[10px] p-[30px] h-full w-full">
                             <div class="flex flex-col gap-[20px]">
                                 <div class="flex flex-col gap-[10px]">
@@ -371,7 +419,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide swiper-slide-packages">
                         <div class="bg-cream rounded-[10px] p-[30px] h-full w-full">
                             <div class="flex flex-col gap-[20px]">
                                 <div class="flex flex-col gap-[10px]">
@@ -407,30 +455,81 @@
                     </div>
 
                 </div>
-                <!-- <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div> -->
+                <div class="flex justify-between items-center py-[30px]">
+                    <p class="text-xs text-white mt-[60px] md:mt-[0px]">*Prices are shown in GBP (£), but will be
+                        charged as the
+                        currency
+                        equivalent.
+                    </p>
+                    <div class="absolute bottom-[90px] left-[60px] md:bottom-[39px] md:left-auto md:right-[50px]">
+                        <div
+                            class="swiper-button-prev ml-[-58px] p-[24px] w-[24px] h-[24px] bg-[#E6E3D1] rounded-full flex items-center justify-center">
+                        </div>
+                        <div
+                            class="swiper-button-next p-[24px] w-[24px] h-[24px] bg-[#E6E3D1] rounded-full flex items-center justify-center">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Village Library Section -->
-<section class="bg-cream relative py-[80px] z-10">
-    <div class="container">
-        <div class="flex flex-col gap-[50px]">
-            <div class="flex flex-col gap-[20px]">
-                <h2 class="heading-2-bold text-center text-navy">Village Library</h2>
+<section class="bg-cream py-[80px] relative z-10 overflow-hidden">
+    <img src="./assets/illustrations/landing-4.svg" alt=""
+        class="w-[1500px] h-[1500px] absolute top-[-350px] left-[0px] lg:top-[-400px] lg:right-[-450px] z-0 opacity-50">
+
+    <div class="container relative z-20">
+        <div class="flex flex-col lg:flex-row gap-[60px]">
+            <div class="flex flex-col flex-1 gap-[20px] items-center justify-center">
+                <div class="flex flex-col gap-[40px] items-center lg:items-start">
+                    <div class="flex flex-col gap-[20px]">
+                        <h2 class="text-navy heading-2-bold lg:text-left text-center">The Village Library</h2>
+                        <p class="text-navy body-text max-w-xs lg:text-left text-center bg-yellow-300">Hannah to check
+                            if theres any particular copy she wants added.</p>
+                    </div>
+                    <div class="inline-block">
+                        <a href="#" class="button-primary">Join the Waitlist</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1">
+                <div class="swiper swiper-cards mySwiperCards">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide-card">
+                            <img src="/assets/book.png" class="w-[300px]" />
+                        </div>
+                        <div class="swiper-slide swiper-slide-card">
+                            <img src="/assets/book.png" class="w-[300px]" />
+                        </div>
+                        <div class="swiper-slide swiper-slide-card">
+                            <img src="/assets/book.png" class="w-[300px]" />
+                        </div>
+                        <div class="swiper-slide swiper-slide-card">
+                            <img src="/assets/book.png" class="w-[300px]" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+
 <!-- Tik Tok Section -->
 <section class="bg-navy relative pb-[180px] pt-[80px] z-10">
     <div class="container">
         <div class="flex flex-col gap-[50px]">
-            <div class="flex flex-col gap-[20px]">
-                <h2 class="heading-2-bold text-center text-cream">1234+ followers on Tik Tok</h2>
+            <div class="flex flex-col gap-[40px] items-center">
+                <h2 class="heading-2-bold text-center text-cream">58K+ followers on Instagram</h2>
+                <a href="#" class="button-primary hover:bg-cream! hover:text-navy! text-center max-w-sm">Follow Us</a>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-[20px]">
+                    <div class="bg-gray-300 h-[200px] w-[200px] xl:h-[250px] xl:w-[250px]"></div>
+                    <div class="bg-gray-300 h-[200px] w-[200px] xl:h-[250px] xl:w-[250px]"></div>
+                    <div class="bg-gray-300 h-[200px] w-[200px] xl:h-[250px] xl:w-[250px]"></div>
+                    <div class="bg-gray-300 h-[200px] w-[200px] xl:h-[250px] xl:w-[250px]"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -441,12 +540,78 @@
     </div>
 </section>
 
-<!-- Instagram Section -->
+<!-- TikTok Section -->
 <section class="bg-white py-[80px] z-10 relative mb-[480px]">
     <div class="container">
         <div class="flex flex-col gap-[50px]">
-            <div class="flex flex-col gap-[20px]">
-                <h2 class="heading-2-bold text-center text-navy">1234+ followers on Instagram</h2>
+            <div class="flex flex-col gap-[40px] items-center">
+                <h2 class="heading-2-bold text-center text-navy">72k+ followers on Tik Tok</h2>
+                <a href="#" class="button-primary text-center max-w-sm">Follow
+                    Us</a>
+                <div class="swiper swiper-tiktok mySwiperTiktok relative">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide-tiktok">
+                            <a href="https://vm.tiktok.com/ZNRRJYorp/">
+                                <video autoplay loop muted playsinline class="rounded-[5px]">
+                                    <source src="assets/tiktok-one.MP4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                        <div class="swiper-slide swiper-slide-tiktok">
+                            <a href="https://vm.tiktok.com/ZNRR1vCP9/" target="_blank">
+                                <video autoplay loop muted playsinline class="rounded-[5px]">
+                                    <source src="assets/tiktok-two.MP4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                        <div class="swiper-slide swiper-slide-tiktok">
+                            <a href="https://vm.tiktok.com/ZNRRJY6xj/" target="_blank">
+                                <video autoplay loop muted playsinline class="rounded-[5px]">
+                                    <source src=" assets/tiktok-three.MP4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                        <div class="swiper-slide swiper-slide-tiktok">
+                            <a href="https://vm.tiktok.com/ZNRR19E9y/" target="_blank">
+                                <video autoplay loop muted playsinline class="rounded-[5px]">
+                                    <source src="assets/tiktok-four.MP4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                        <div class="swiper-slide swiper-slide-tiktok">
+                            <a href="https://vm.tiktok.com/ZNRRJJumv/" target="_blank">
+                                <video autoplay loop muted playsinline class="rounded-[5px]">
+                                    <source src="assets/tiktok-five.MP4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex pt-[20px] gap-[10px] justify-center">
+                        <div
+                            class="tiktok-swiper-button-prev p-[10px] bg-[#E6E3D1] rounded-full flex items-center justify-center cursor-pointer">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] text-[#012d48]"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 6 9 12 15 18" />
+                            </svg>
+
+                        </div>
+                        <div
+                            class="tiktok-swiper-button-next p-[10px] bg-[#E6E3D1] rounded-full flex items-center justify-center cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] text-[#012d48]"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 6 15 12 9 18" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -460,14 +625,54 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-    var swiper = new Swiper(".mySwiper", {
+    var swiperPackages = new Swiper(".mySwiperPackages", {
         slidesPerView: "auto",
-        spaceBetween: 30,
+        spaceBetween: 20,
+        simulateTouch: true,
+        grabCursor: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: "auto",
+            },
+        },
     });
+</script>
+
+<script>
+    var swiperCards = new Swiper(".mySwiperCards", {
+        effect: "cards",
+        grabCursor: true,
+    });
+</script>
+
+<script>
+    var swiperTiktok = new Swiper(".mySwiperTiktok", {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".tiktok-swiper-button-next",
+            prevEl: ".tiktok-swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1024: {
+                slidesPerView: 5,
+            },
+        },
+    });
+
 </script>
   <footer class="bg-cream pt-[180px] fixed w-full bottom-0 z-0">
     <div class="flex flex-col gap-[20px] px-[20px] lg:px-[100px] pb-[20px]">
