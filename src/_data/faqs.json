@@ -1,0 +1,60 @@
+{
+    "about": [
+        {
+            "question": "What is a 'Holistic' Sleep Consultant and what's different?",
+            "answer": "Holistic means that I look at the full picture. I'll send you a sleep diary to complete which gives me a detailed look into your childs sleep. Then we'll have a conversation where I'll ask you lots of questions about your child's temperament, your goals and your non-negotiables. The sleep plan we come up with together is tailored to your child and your family. I never do the same one twice."
+        },
+        {
+            "question": "Do you use controlled crying or Ferber style methods?",
+            "answer": "Absolutely not. You don't need these methods to help your little one get more sleep. Many parents have been desperate and resorted to these methods because its seemed like the only option, but its not. Theres never any judgement from me if you've used these methods before, I used a variation of Ferber with my own son before I knew there were other more gentle ways."
+        },
+        {
+            "question": "Do you have any qualifications?",
+            "answer": "Yes! I have completed an OCN Level 6 course which is a Masters Level course studying child sleep biology and analyses hundreds of sleep studies on children. I will always educate families on child sleep biology as it helps to understand why your child is waking and this helps you make decisions in future about their sleep."
+        }
+    ],
+    "packages": [
+        {
+            "question": "Will you use any cry it out strategies?",
+            "answer": "No, never. The most direct we're willing to go with a strategy is if your child cries because you've changed something you pick them up and co regulate them."
+        },
+        {
+            "question": "What kind of strategies do you use?",
+            "answer": "We start with optimizing sleep pressure which can often solve everything for you but if not then we move onto evidenced based strategies that take into consideration your child's developmental stage. This is after a holistic review at various points within your follow up support. We have lots of tips that we've picked up through our experience with working with hundreds of families that we'll share with you too."
+        },
+        {
+            "question": "Do I need to stay at home while working on sleep?",
+            "answer": "No. We want you to be able to do life along with getting better sleep. Your baby will have accidental naps on the go at times or solely have naps on the go, this is fine and we'll teach you how to manage days that don't go to plan."
+        },
+        {
+            "question": "Can I upgrade if I want more support?",
+            "answer": "Yes - you can pay the difference between packages and upgrade at any time."
+        },
+        {
+            "question": "Do you do payment plans?",
+            "answer": "Not right now unfortunately, this may be something we offer in future."
+        },
+        {
+            "question": "What happens after I book?",
+            "answer": "You'll get a booking confirmation email with a link to a sleep diary. Fill this out and email it back to us 24 hours before your consultation. We'll review this before your consultation and be ready to talk you through what we've found."
+        }
+    ],
+    "villageLibrary": [
+        {
+            "question": "What is the Village Library?",
+            "answer": "The Village Library is a curated collection of modules designed to guide parents through every stage of their baby's sleep journey. It will include a range of content, from expert advice to practical tips, all aimed at helping parents understand and improve their baby's sleep patterns."
+        },
+        {
+            "question": "When will the Village Library be released?",
+            "answer": "We are working hard on all the content for the Village Library to make sure its perfect. We will be sharing updates on our socials, so make sure to follow us for the latest news!"
+        },
+        {
+            "question": "How can I access the Village Library?",
+            "answer": "When released the Village Library will be accessible through our website. We will share further details on how to access it closer to the time!"
+        },
+        {
+            "question": "How can I stay updated on the Village Library?",
+            "answer": "We will be sharing updates on the Village Library through our socials, so make sure to follow us for the latest news!"
+        }
+    ]
+}

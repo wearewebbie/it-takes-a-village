@@ -1,0 +1,30 @@
+---
+layout: base/base.njk
+---
+
+
+<section class="pt-[180px] pb-[180px] sticky top-0 z-5 bg-cream">
+    <div class="container">
+        <div class="flex flex-col items-center">
+            <h1 class="text-navy heading-1-bold">{{ title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-[80px] z-10 relative mb-[656px] sm:mb-[464px]">
+    <div class="markdown-isolated">
+        <div class="container">
+            {{ content | safe }}
+        </div>
+    </div>
+
+    <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
+        <img src="/assets/svgs/section-cloud.svg" alt=""
+            class="absolute inset-0 w-full h-full object-cover object-center">
+    </div>
+
+    <div class="absolute bottom-[-100px] left-0 w-screen h-[100px] overflow-hidden">
+        <img src="/assets/svgs/section-cloud.svg" alt=""
+            class="absolute rotate-180 inset-0 w-full h-full object-cover object-center">
+    </div>
+</section>

@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Troubleshoot",
+        "price": "£180",
+        "url": "https://app.acuityscheduling.com/schedule/329c7d69",
+        "features": [
+            "1 Hour Consultation",
+            "3-5 Day Sleep Diary Review",
+            "2 WhatsApp Check-in's"
+        ],
+        "description": "After booking, you'll receive a Sleep Diary to complete. In a one-hour consultation, we'll review it, discuss strategies for your child, and leave with a clear plan to implement—no written plan included, so bring a pen and paper."
+    },
+    {
+        "name": "1:1 Personalised Sleep Coaching",
+        "price": "£290",
+        "url": "https://app.acuityscheduling.com/schedule/329c7d69",
+        "features": [
+            "1 Hour Consultation",
+            "3-5 Day Sleep Diary Review",
+            "Weekly WhatsApp check-in for 4 weeks"
+        ],
+        "description": "This package helps you gain confidence in improving your little one's sleep, with follow-up WhatsApp support. Use your weekly check-ins however you like within 8 weeks. An AI-generated summary is also available on request."
+    },
+    {
+        "name": "The Village",
+        "price": "£425",
+        "url": "https://app.acuityscheduling.com/schedule/329c7d69",
+        "features": [
+            "1 Hour Consultation",
+            "3-5 Day Sleep Diary Review",
+            "Daily WhatsApp Support",
+            "6 months membership to The Village"
+        ],
+        "description": "This package gives you steady, long-term support for your child's sleep over 6 months. After your 1:1 consultation, you'll join The Village for daily guidance, learning from other parents, and optional weekly group coaching calls."
+    },
+    {
+        "name": "Sleep Overhaul",
+        "price": "£695",
+        "url": "https://app.acuityscheduling.com/schedule/329c7d69",
+        "features": [
+            "1 Hour Consultation",
+            "3-5 Day Sleep Diary Review",
+            "5 weeks WhatsApp Support",
+            "6 months membership to The Village"
+        ],
+        "description": "A complete sleep overhaul for determined parents. Over five weeks of 1:1 support, we address multiple sleep challenges, establish a routine that works for your family, and give you the confidence to manage future sleep changes."
+    },
+    {
+        "name": "Extras",
+        "price": "Price Varies",
+        "url": "https://app.acuityscheduling.com/schedule/329c7d69",
+        "extras": [
+            "1 Week WhatsApp Support - £123"
+        ],
+        "description": "These optional extras can be added on to any package to give you extra support as you need it."
+    }
+]

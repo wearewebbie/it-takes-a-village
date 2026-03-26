@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-1: #;
-    --color-2: #;
-    --color-3: #;
-    --color-4: #;
+    --color-cream: #f4f1e1;
+    --color-navy: #012d48;
+    --color-terqoise: #6fcec6;
+    --color-white: #fff;
     --color-5: #;
     --color-6: #;
 }
@@ -12,7 +12,7 @@
 @layer utilities {
 
     .container {
-        @apply mx-auto max-w-screen-lg px-[10px] lg:px-[20px];
+        @apply mx-auto px-[10px] lg:px-[20px];
     }
 
     h1,
@@ -21,7 +21,7 @@
     h4,
     h5,
     h6 {
-        font-family: "Heading Font", sans-serif !important;
+        font-family: "Solway", sans-serif !important;
     }
 
     .markdown-isolated {
@@ -44,8 +44,9 @@
     }
 
     body {
-        font-family: "Body Font", sans-serif;
+        font-family: "Solway", sans-serif;
     }
+
 
     /* -------------------- H1 -------------------- */
     .heading-1-thin {
@@ -272,4 +273,75 @@
     .body {
         @apply font-normal text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
     }
+
+
+    .small {
+        @apply font-normal text-[14px] leading-[20px] lg:leading-[22px];
+    }
+
+    .button-primary {
+        @apply bg-terqoise text-white font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-navy transition-colors duration-300 cursor-pointer;
+    }
+
+    .nav-link-active {
+        @apply text-terqoise;
+    }
+}
+
+
+.hamburger {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 28px;
+    height: 2px;
+    background: #012d48;
+    border-radius: 2px;
+    transform-origin: center center;
+    transition: transform 320ms cubic-bezier(.2, .8, .2, 1), opacity 160ms ease;
+}
+
+.hamburger .bar:nth-child(1) {
+    transform: translate(-50%, -8px);
+}
+
+.hamburger .bar:nth-child(2) {
+    transform: translate(-50%, 0);
+}
+
+.hamburger .bar:nth-child(3) {
+    transform: translate(-50%, 8px);
+}
+
+.hamburger.open .bar:nth-child(1) {
+    transform: translate(-50%, 0) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+    transform: translate(-50%, 0) scaleX(.05);
+    opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.hamburger:focus {
+    outline: 2px solid Highlight;
+    outline-offset: 3px;
+}
+
+[data-accordion-content] {
+    max-height: 0px;
 }

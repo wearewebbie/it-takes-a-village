@@ -1,44 +1,68 @@
-import sharp from "sharp";
+import Image from '@11ty/eleventy-img';
 import fs from "fs";
 import path from "path";
 
 export default function (eleventyConfig) {
 
-    eleventyConfig.on("eleventy.before", async () => {
-        const inputDir = "src/assets/images";
-        const outputDir = "dist/assets/images";
+    // Environment check
+    const env = process.env.NODE_ENV;
+    const isLocal = env === "local";
+    const isDev = env === "development";
+    const isProd = env === "production";
 
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
-        }
+    const outputDir = isProd ? "dist-prod" : isDev ? "dist-dev" : "dist";
 
-        const files = fs.readdirSync(inputDir);
+    // Image shortcode
+    eleventyConfig.addShortcode('image', async function (src, alt, cls, options = {}) {
+        const {
+            widths = [400, 800, 1200],
+            formats = ['avif', 'webp', 'jpeg'],
+            sizes = '100vw',
+        } = options;
 
-        for (const file of files) {
-            if (/\.(jpg|jpeg|png)$/i.test(file)) {
-
-                const inputPath = path.join(inputDir, file);
-                const outputFileName = file.replace(/\.(jpg|jpeg|png)$/i, ".webp");
-                const outputPath = path.join(outputDir, outputFileName);
-
-                if (fs.existsSync(outputPath)) continue;
-
-                await sharp(inputPath)
-                    .webp({ quality: 80 })
-                    .toFile(outputPath);
-
-                console.log(`Optimized: ${file}`);
+        const metadata = await Image(src, {
+            widths,
+            formats,
+            outputDir: `./${outputDir}/assets/images/`,
+            urlPath: '/assets/images/',
+            filenameFormat: function (id, src, width, format) {
+                const name = path.basename(src, path.extname(src));
+                return `${name}-${width}w.${format}`;
             }
-        }
+        });
+
+        return Image.generateHTML(metadata, {
+            alt,
+            class: cls,
+            sizes,
+            loading: 'lazy',
+            decoding: 'async',
+        });
+    });
+
+    eleventyConfig.addFilter("lastModifiedDate", function (filePath) {
+        const stats = fs.statSync(filePath);
+        return stats.mtime.toISOString().split("T")[0];
+    });
+
+    eleventyConfig.addLiquidFilter("dateFormat", function (date) {
+        return new Date(date).toISOString().split("T")[0];
+    });
+
+    eleventyConfig.addCollection("debugUrls", function (collectionApi) {
+        return collectionApi.getAll().map(item => {
+            return item;
+        });
     });
 
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/js");
+    eleventyConfig.addPassthroughCopy("src/assets/svgs");
 
     return {
         dir: {
             input: "src",
-            output: "dist",
+            output: outputDir,
         },
     };
 }

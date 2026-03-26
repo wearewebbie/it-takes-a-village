@@ -1,0 +1,23 @@
+[
+    {
+        "label": "Home",
+        "url": "/"
+    },
+    {
+        "label": "About",
+        "url": "/about/"
+    },
+    {
+        "label": "Packages",
+        "url": "/packages/"
+    },
+    {
+        "label": "Village Library",
+        "url": "/village-library/"
+    },
+    {
+        "label": "Book",
+        "url": "/packages/",
+        "type": "cta"
+    }
+]
