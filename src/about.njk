@@ -1,8 +1,73 @@
 ---
 layout: base/base.njk
 title: "About"
-description: ""
+description: "Meet the It Takes a Village team — OCN Level 6 qualified holistic sleep consultants. A gentle, responsive
+approach to baby sleep, tailored to your child and your family."
 ---
+
+<style>
+  dialog {
+    border: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease allow-discrete;
+  }
+
+  dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @starting-style {
+    dialog[open] {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+  dialog::backdrop {
+    opacity: 0;
+    transition: opacity 0.3s ease, display 0.3s ease allow-discrete;
+  }
+
+  dialog[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    dialog[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  dialog.closing {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  dialog.closing::backdrop {
+    opacity: 0;
+  }
+
+  @media (max-width: 767px) {
+    dialog {
+      max-width: none;
+      max-height: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-card {
+      --rotation: 0deg;
+      transform: rotate(var(--rotation));
+    }
+
+    .team-card:hover {
+      transform: rotate(0deg) scale(1.1);
+      z-index: 20;
+    }
+  }
+</style>
 
 <section class="pt-[180px] pb-[180px] sticky top-0 z-5 bg-cream">
   <div class="container">
@@ -12,152 +77,77 @@ description: ""
   </div>
 </section>
 
-<!-- Top Section -->
+<!-- OCN Qualified Cards -->
 <section class="bg-white py-[80px] relative z-10">
-  <div class="flex flex-col container gap-[50px]">
-    <div class="flex flex-col gap-[20px] items-center">
-      <p class="body text-navy text-center max-w-2xl">
-        We are among the most highly qualified sleep consultants you can find,
-        and we're here to support you with expert guidance, compassion, and care
-        every step of the way. You're not alone—we're in this together.
-      </p>
-    </div>
-
-    <div class="flex justify-center">
-      <div class="relative w-full lg:w-[95%] px-4 lg:px-0">
-        <svg class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 z-20" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="#6fcec6" stroke="#6fcec6" stroke-width="10" />
-        </svg>
-
-        <div class="relative lg:rotate-[-2deg] w-full">
-          <div
-            class="relative border-[10px] lg:border-[20px] border-navy bg-cream rounded-lg shadow-lg lg:p-[40px] p-[20px]">
-            <div class="flex flex-col justify-center items-center gap-[20px]">
-              <h3 class="heading-6-bold text-center">
-                Hannah - Founder &amp; Qualified Sleep Consultant
-              </h3>
-
-              <p class="text-center body-text">
-                I'm Hannah Hiles, Mum of 2 and a Gentle and Holistic Sleep
-                Consultant.
-              </p>
-
-              <p class="text-center body-text">
-                I had my own sleep struggles with my first son and was given
-                not-so-great advice by Sleep Consultants who charged me a lot of
-                money to tell me to leave my son to cry as he was overtired.
-              </p>
-
-              <p class="text-center body-text">
-                Everything in me told me this was wrong so I ignored the advice
-                and was chronically sleep-deprived for 18 months.
-              </p>
-
-              <p class="text-center body-text">
-                Fast forward to my second son, I undertook an OCN Level 6 course
-                which armed me with knowledge about the sleep biology of babies
-                and children.
-              </p>
-
-              <div class="lg:pr-[150px] flex flex-col gap-[20px]">
-                <p class="text-center body-text">
-                  Now I help families everyday get more sleep by being fully
-                  responsive to their babies. That means rocking, feeding to
-                  sleep, co-sleeping and whatever other method you like to use.
-                </p>
-
-                <p class="sm:pr-[100px] text-center body-text">
-                  I do not use any cry-it-out or controlled crying methods
-                  whatsoever. They don't work long-term. I educate you on your
-                  baby's individual sleep needs and give you a knowledge toolbox
-                  to take with you even after we're finished working together.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="w-[180px] relative mx-auto lg:absolute lg:-bottom-10 lg:-right-10 bg-white px-[20px] pt-[20px] rounded-md shadow-xl lg:rotate-[4deg] rotate-0 border border-neutral-200 z-30">
-              <svg class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 z-50" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" fill="#6fcec6" stroke="#6fcec6" stroke-width="10" />
-              </svg>
-
-              {% image "src/assets/images/team-carley.png", "Portrait of Hannah", "w-[150px] object-cover rounded-sm"
-              %}
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="container">
+    <div class="flex flex-col gap-[40px]">
     </div>
   </div>
 
   <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
-    <img src="/assets/svgs/section-cloud.svg" alt="" class="absolute inset-0 w-full h-full object-cover object-center">
+    <img src="/assets/svgs/section-cloud.svg" aria-hiden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center">
   </div>
 </section>
 
-<section class="bg-cream py-[80px] relative z-10 overflow-x-hidden">
-  <div class="flex flex-col container gap-[50px]">
-    <div class="flex justify-center">
-      <div class="relative w-full lg:w-[95%] px-4 lg:px-0">
-        <svg class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 z-20" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="#6fcec6" stroke="#6fcec6" stroke-width="10" />
-        </svg>
+<!-- Team Cards -->
+<section class="bg-white relative z-10">
+  <div class="flex flex-col gap-[30px]">
+    <div class="container">
+      <div class="flex flex-col gap-[20px]">
+        <h2 class="text-terqoise heading-2-bold text-center">Meet our Sleep Consultants</h2>
+        <p class="body text-navy text-center max-w-2xl mx-auto">
+          We are among the most highly qualified sleep consultants you can find,
+          and we're here to support you with expert guidance, compassion, and care
+          every step of the way. You're not alone—we're in this together.
+        </p>
+      </div>
+    </div>
 
-        <div class="relative w-full lg:rotate-[2deg]">
-          <div
-            class="relative border-[10px] lg:border-[20px] border-navy bg-white rounded-lg shadow-lg p-[20px] lg:p-[40px]">
-            <div class="flex flex-col justify-center items-center gap-[20px]">
-              <h3 class="heading-6-bold text-center">
-                Carley - Qualified Sleep Consultant
-              </h3>
-
-              <p class="text-center body-text">
-                Hi there! I'm Carley and I'm a holistic baby sleep consultant,
-                certified OCN level 6. I'm based in the beautiful
-                Garmisch-Partenkirchen, Germany. At 38 years old, I've spent the
-                last 15 years working as a special education teacher, which has
-                given me invaluable experience in understanding and nurturing
-                little ones.
-              </p>
-
-              <p class="text-center body-text">
-                I'm also a proud mom to my one-year-old daughter, and happily
-                married.
-              </p>
-
-              <p class="text-center body-text">
-                I have a deep interest in the science behind baby and child
-                brain development and sleep science, and I love incorporating
-                this knowledge into my practice.
-              </p>
-
-              <p class="lg:pl-[100px] text-center body-text">
-                When I'm not helping families achieve restful nights, you can
-                find me cycling and mountain biking, as I'm an avid athlete.
-              </p>
-
-              <p class="lg:pl-[100px] text-center body-text">
-                I'm passionate about helping families find gentle, holistic
-                solutions for sleep, and I can't wait to support you and your
-                little one on this journey!
-              </p>
-            </div>
-
+    <!-- Mobile: Swiper carousel -->
+    <div class="md:hidden">
+      <div class="swiper swiperTeam py-[40px]">
+        <div class="swiper-wrapper">
+          {%- for member in team %}
+          {%- if member.bio.length > 0 %}
+          <div class="swiper-slide">
             <div
-              class="w-[180px] relative mx-auto mt-6 lg:absolute lg:-bottom-10 lg:-left-10 bg-cream px-[20px] pt-[20px] rounded-md shadow-xl rotate-0 lg:rotate-[4deg] border border-neutral-200 z-30">
-              <svg class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 z-50" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" fill="#6fcec6" stroke="#6fcec6" stroke-width="10" />
-              </svg>
-
-              {% image "src/assets/images/team-carley.png", "Portrait of Carley", "w-[150px] object-cover rounded-sm"
-              %}
+              class="aspect-[3/4] border-[10px] border-navy rounded-[10px] overflow-hidden shadow-lg mx-auto cursor-pointer bg-cream flex items-end justify-center"
+              data-team-card data-name="{{ member.name }}">
+              {% image member.image, "Portrait of " + member.name, "w-full h-auto max-h-[400px] object-contain pt-[20px]
+              px-[20px]" %}
             </div>
           </div>
+          {%- endif %}
+          {%- endfor %}
         </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Desktop: Overlapping fan layout -->
+      <div class="hidden md:flex items-center justify-center py-[40px] -space-x-[40px]">
+        {%- set rotations = ["-3deg", "1.5deg", "-1deg", "2deg", "-2deg"] %}
+        {%- for member in team %}
+        {%- if member.bio.length > 0 %}
+        <div
+          class="team-card relative flex-shrink-0 w-[180px] lg:w-[260px] aspect-[3/4] border-[10px] lg:border-[15px] border-navy rounded-[10px] overflow-hidden shadow-lg cursor-pointer transition-all duration-300 bg-cream flex items-end justify-center"
+          style="--rotation: {{ rotations[loop.index0 % rotations.length] }};" data-team-card
+          data-name="{{ member.name }}">
+          {% image member.image, "Portrait of " + member.name, "w-full h-auto max-h-[400px] object-contain pt-[20px]
+          px-[20px]" %}
+        </div>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+
+      <div id="team-cursor-label"
+        class="pointer-events-none fixed hidden rounded-full bg-white px-[16px] py-[8px] text-sm text-navy shadow-md z-50">
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Bottom Section -->
 <section class="bg-white py-[80px] z-10 relative mb-[656px] sm:mb-[464px]">
@@ -205,6 +195,42 @@ description: ""
   </div>
 </section>
 
+{%- for member in team %}
+{%- if member.bio.length > 0 %}
+<dialog id="modal-{{ member.name | lower }}"
+  class="w-full h-full md:w-auto md:h-auto md:max-w-[900px] md:max-h-[600px] md:rounded-[20px] p-[30px] md:pb-[30px] m-0 md:m-auto backdrop:bg-black/50">
+  <div class="flex flex-col md:flex-row gap-[24px] h-full">
+    <button type="button" data-modal-close aria-label="Close"
+      class="cursor-pointer text-navy text-2xl leading-none w-[44px] min-h-[44px] bg-black/5 rounded-[5px] flex md:hidden items-center justify-center ml-auto flex-shrink-0">&times;</button>
+
+    <div class="md:w-1/2 flex-shrink-0 flex items-end justify-center bg-cream rounded-[16px] pt-[60px] md:pt-[0px]">
+      {% image member.image, "Portrait of " + member.name, "max-w-[80%] max-h-full object-contain mx-auto block" %}
+    </div>
+    <div class="md:w-1/2 relative">
+      <div class="flex flex-col gap-[30px] md:overflow-y-auto md:max-h-full pb-[30px] md:pb-[0px]" data-modal-scroll>
+        <div class="flex flex-col gap-[10px]">
+          <div class="flex flex-row gap-[10px] justify-between items-center">
+            <h3 class="text-navy heading-4-bold">{{ member.name }}</h3>
+            <button type="button" data-modal-close aria-label="Close"
+              class="cursor-pointer text-navy text-2xl leading-none w-[44px] h-[44px] bg-black/5 rounded-[5px] hidden md:flex items-center justify-center ml-auto">&times;</button>
+          </div>
+          <p class="text-navy body-text font-medium">{{ member.role }}</p>
+          <span class="inline-block bg-terqoise text-white small-light px-[12px] py-[4px] rounded-full w-fit">OCN Level
+            6
+            Qualified</span>
+        </div>
+        {%- for paragraph in member.bio %}
+        <p class="body-text">{{ paragraph }}</p>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</dialog>
+{%- endif %}
+{%- endfor %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
   document.querySelectorAll("[data-accordion-trigger]").forEach((button) => {
     const content = button.nextElementSibling;
@@ -227,4 +253,92 @@ description: ""
       }
     });
   });
+
+  var teamSwiper = new Swiper(".swiperTeam", {
+    slidesPerView: 1.3,
+    centeredSlides: true,
+    spaceBetween: 16,
+  });
+
+  (function () {
+    const label = document.getElementById('team-cursor-label');
+    document.querySelectorAll('[data-team-card]').forEach(function (card) {
+      card.addEventListener('mouseenter', function () {
+        label.textContent = 'More about ' + card.dataset.name;
+        label.classList.remove('hidden');
+      });
+      card.addEventListener('mousemove', function (e) {
+        label.style.left = e.clientX + 15 + 'px';
+        label.style.top = e.clientY + 15 + 'px';
+      });
+      card.addEventListener('mouseleave', function () {
+        label.classList.add('hidden');
+      });
+      card.addEventListener('click', function () {
+        label.classList.add('hidden');
+        var modal = document.getElementById('modal-' + card.dataset.name.toLowerCase());
+        if (modal) {
+          modal.showModal();
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeDialog(dialog) {
+      dialog.classList.add('closing');
+      dialog.addEventListener('transitionend', function handler() {
+        dialog.classList.remove('closing');
+        dialog.close();
+        document.body.style.overflow = '';
+        dialog.removeEventListener('transitionend', handler);
+      });
+    }
+
+    document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        closeDialog(btn.closest('dialog'));
+      });
+    });
+
+    document.querySelectorAll('dialog').forEach(function (dialog) {
+      dialog.addEventListener('click', function (e) {
+        if (e.target === dialog) closeDialog(dialog);
+      });
+      dialog.addEventListener('cancel', function (e) {
+        e.preventDefault();
+        closeDialog(dialog);
+      });
+    });
+
+    function updateScrollMask(el) {
+      var scrollTop = el.scrollTop;
+      var scrollHeight = el.scrollHeight;
+      var clientHeight = el.clientHeight;
+      var atTop = scrollTop < 5;
+      var atBottom = scrollTop + clientHeight >= scrollHeight - 5;
+      var canScroll = scrollHeight > clientHeight;
+
+      if (!canScroll) {
+        el.style.maskImage = 'none';
+        el.style.webkitMaskImage = 'none';
+      } else if (atTop) {
+        el.style.maskImage = 'linear-gradient(to bottom, black 80%, transparent 100%)';
+        el.style.webkitMaskImage = 'linear-gradient(to bottom, black 80%, transparent 100%)';
+      } else if (atBottom) {
+        el.style.maskImage = 'linear-gradient(to top, black 80%, transparent 100%)';
+        el.style.webkitMaskImage = 'linear-gradient(to top, black 80%, transparent 100%)';
+      } else {
+        el.style.maskImage = 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)';
+        el.style.webkitMaskImage = 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)';
+      }
+    }
+
+    document.querySelectorAll('[data-modal-scroll]').forEach(function (el) {
+      el.addEventListener('scroll', function () { updateScrollMask(el); });
+      var observer = new MutationObserver(function () {
+        requestAnimationFrame(function () { updateScrollMask(el); });
+      });
+      observer.observe(el.closest('dialog'), { attributes: true });
+    });
+  })();
 </script>
