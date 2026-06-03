@@ -4,9 +4,10 @@
         "price": "£290",
         "url": "https://app.acuityscheduling.com/schedule/329c7d69",
         "features": [
-            "1 Hour Consultation",
-            "3-5 Day Sleep Diary Review",
-            "3 WhatsApp Check-in's"
+            "1 Hour consultation",
+            "3-5 Day Sleep diary review",
+            "4 * 15 Minute Zoom check-ins",
+            "Personalised sleep summary"
         ],
         "description": "This package helps you gain confidence in improving your little one's sleep, with follow-up WhatsApp support. Use your weekly check-ins however you like within 8 weeks. An AI-generated summary is also available on request."
     },
@@ -15,10 +16,11 @@
         "price": "£425",
         "url": "https://app.acuityscheduling.com/schedule/329c7d69",
         "features": [
-            "1 Hour Consultation",
-            "3-5 Day Sleep Diary Review",
-            "Daily WhatsApp Support",
-            "6 months membership to The Village"
+            "1 Hour consultation",
+            "3-5 Day sleep diary review",
+            "Daily WhatsApp support",
+            "2 weekly group coaching calls",
+            "6 months membership to the village"
         ],
         "description": "This package gives you steady, long-term support for your child's sleep over 6 months. After your 1:1 consultation, you'll join The Village for daily guidance, learning from other parents, and optional weekly group coaching calls."
     },
@@ -27,10 +29,10 @@
         "price": "£695",
         "url": "https://app.acuityscheduling.com/schedule/329c7d69",
         "features": [
-            "1 Hour Consultation",
-            "3-5 Day Sleep Diary Review",
-            "5 weeks WhatsApp Support",
-            "6 months membership to The Village"
+            "1 Hour consultation",
+            "3-5 Day sleep diary review",
+            "5 weeks whatsApp support",
+            "6 months membership to the village"
         ],
         "description": "A complete sleep overhaul for determined parents. Over five weeks of 1:1 support, we address multiple sleep challenges, establish a routine that works for your family, and give you the confidence to manage future sleep changes."
     }
