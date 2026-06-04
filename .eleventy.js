@@ -13,6 +13,7 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addGlobalData("baseUrl", baseUrl);
     eleventyConfig.addGlobalData("isProd", isProd);
+    eleventyConfig.addGlobalData("year", new Date().getFullYear());
 
     eleventyConfig.addShortcode('image', async function (src, alt, cls, options = {}) {
         const {
@@ -59,6 +60,8 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/assets/svgs");
+    eleventyConfig.addPassthroughCopy("src/assets/videos");
+    eleventyConfig.addPassthroughCopy("src/assets/images/website-preview-image.png");
 
     return {
         dir: {

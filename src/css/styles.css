@@ -275,8 +275,76 @@
     }
 
 
-    .small {
-        @apply font-normal text-[14px] leading-[20px] lg:leading-[22px];
+    .body-thin {
+        @apply font-thin text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-extralight {
+        @apply font-extralight text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-light {
+        @apply font-light text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-normal {
+        @apply font-normal text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-medium {
+        @apply font-medium text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-semibold {
+        @apply font-semibold text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-bold {
+        @apply font-bold text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-extrabold {
+        @apply font-extrabold text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .body-black {
+        @apply font-black text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
+    }
+
+    .small-thin {
+        @apply font-thin text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-extralight {
+        @apply font-extralight text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-light {
+        @apply font-light text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-normal {
+        @apply font-normal text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-medium {
+        @apply font-medium text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-semibold {
+        @apply font-semibold text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-bold {
+        @apply font-bold text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px] tracking-[1.4px];
+    }
+
+    .small-extrabold {
+        @apply font-extrabold text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px];
+    }
+
+    .small-black {
+        @apply font-black text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px];
     }
 
     .button-primary {

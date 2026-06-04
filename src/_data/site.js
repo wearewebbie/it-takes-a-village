@@ -6,7 +6,7 @@ export default {
     ? "https://ittakesavillagebabysleep.com"
     : process.env.CF_PAGES_URL || "http://localhost:8080",
   logo: "",
-  image: "src/assets/images/website-preview-image.png",
+  image: "/assets/images/website-preview-image.png",
   email: "itav.sleep@gmail.com",
   social: {
     instagram: "https://www.instagram.com/ittakesavillage_baby_sleep/",

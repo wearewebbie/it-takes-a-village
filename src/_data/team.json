@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Hannah",
+        "role": "Founder & Sleep Consultant",
+        "image": "src/assets/images/team-hannah.png",
+        "bio": [
+            "I am Founder of It Takes A Village and OCN Level 6 Certificated Holistic Sleep Coach. I had my first son right in the middle of COVID and was fully prepared to get him sleeping through the night by 6 months with my huckleberry App in hand. Spoiler - he didn't STTN until he was 18 months!",
+            "My FOMO boy was rolling, sitting up and standing at 3 months, taking 30 minute naps and 9 hours at night and I was working HARD to make him sleep more. No one understood him and kept saying it wasn't 'normal' and he was overtired. But I know now hes just high energy and low sleep needs - a wonderful FOMO baby.",
+            "I created It Takes A Village armed with OCN Level 6 wanting to help some families understand their babies and not look to apps to tell them how to parent. Now I've built this enormous community which is growing every day and I've helped over 700 families.",
+            "I've also never used any sleep training methods - and never will."
+        ]
+    },
+    {
+        "name": "Carley",
+        "role": "Sleep Consultant",
+        "image": "src/assets/images/team-carley.png",
+        "bio": [
+            "Carley has an extensive teaching background and specialized in special education. Carley has a nearly two year old daughter who she was determined she would not sleep train but like all of us needed sleep. Carley worked with ITAV as a client, but also a friend, and this ignited her interest in the holistic sleep world.",
+            "Cut a long story short, Carley qualified in OCN L6 and has been supporting families get sleep with no sleep training ever since.",
+            "Carley is also creating some exciting new workshops and group coaching to support parents going through big life changes after that first year - think 'sensible approach to potty learning' and big feelings 👀"
+        ]
+    },
+    {
+        "name": "Lisa",
+        "role": "Sleep Consultant",
+        "image": "src/assets/images/team-lisa.png",
+        "bio": [
+            "Lisa was one of ITAV's very first clients way back when. Her little girl had a really tough start to life after being born prematurely. Lisa navigated reflux, eczema, allergies, feeding challenges and breathing difficulties, all while supporting a little Velcro baby who never wanted to be put down. Even as they worked through the medical side of things, sleep still felt really hard.",
+            "'Textbook' sleep training was never going to work for Lisa's family so she sought a way toward sustainable sleep that felt right for her baby girl. Lisa then gained the OCN L6 certification and joined The Village as a Sleep Consultant. This sleep journey hasn't been linear for Lisa's family but as a result she is tenacious about understanding babies individual needs and creating sustainability for every family without sleep training."
+        ]
+    },
+    {
+        "name": "Kate",
+        "role": "Sleep Consultant",
+        "image": "src/assets/images/team-kate.png",
+        "bio": [
+            "Kate was one of my clients when her youngest was just 5.5 months old. He was born with a serious heart condition and was being closely monitored, so keeping him calm and settled was really important to help prevent his symptoms from worsening. Because of that, sleep training was never something that felt right for Kate — and honestly, it wasn't something she believed in or wanted to do either.",
+            "As we worked together, we discovered that even alongside all of his medical challenges, her little guy was incredibly driven to hit his milestones and actually dropped to one nap at just 10 months old — so early!",
+            "Kate loved her sleep journey so much that it completely sparked a passion in her to help other families get better sleep in a way that still feels responsive, gentle, and connected to their baby.",
+            "An OCN Level 6 certification later she helping families get better sleep by looking holistically at their baby and being responsive."
+        ]
+    },
+    {
+        "name": "Ruth",
+        "role": "",
+        "image": "src/assets/images/team-ruth.png",
+        "bio": []
+    }
+]

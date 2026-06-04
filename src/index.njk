@@ -1,29 +1,14 @@
 ---
 layout: base/base.njk
 title: "Home"
-description: "Hello"
+description: "Struggling with baby sleep? It Takes a Village offers gentle, holistic sleep coaching with no cry-it-out
+methods. OCN Level 6 qualified consultants here to help."
 ---
 
 <style>
     .swiper-tiktok {
         width: 100%;
         height: 100%;
-    }
-
-    .swiper-packages {
-        width: 100%;
-        height: 100%;
-    }
-
-    .swiper-slide-packages {
-        width: 450px;
-        height: auto !important;
-    }
-
-    @media (max-width: 768px) {
-        .swiper-slide-packages {
-            width: 100%;
-        }
     }
 
     .swiper-slide-shadow {
@@ -34,45 +19,6 @@ description: "Hello"
         width: 300px;
         height: 100%;
     }
-
-    .swiper-slide-packages {
-        width: 450px;
-        height: 100%;
-    }
-
-    @media (max-width: 768px) {
-        .swiper-slide-packages {
-            width: 100%;
-        }
-    }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        content: none;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        position: static;
-        transform: none;
-        inset: auto;
-        width: 44px;
-        height: 44px;
-        padding: 10px;
-        background-color: #E6E3D1;
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-
-    .swiper-button-next img,
-    .swiper-button-prev img {
-        width: 24px;
-        height: 24px;
-    }
 </style>
 
 <section class="pt-[100px] sticky top-0 z-5 bg-cream">
@@ -80,7 +26,8 @@ description: "Hello"
         <div class="flex flex-col gap-[10px] items-center justify-center h-full">
             <h1 class="heading-1-bold text-center text-navy">It Takes a Village</h1>
             <h2 class="heading-4-bold text-center text-terqoise">Holistic Sleep Consultant</h2>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 341 52" height="52" width="341">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 341 52" height="52" width="341"
+                aria-hidden="true">
                 <path fill="#012D48"
                     d="M41.4522 12.1735C47.5452 16.7694 53.3418 21.182 59.2479 25.4511C62.3385 27.6847 68.5562 28.5889 72.1889 27.6698C72.8078 27.5133 73.4786 27.473 74.1218 27.4941C81.8033 27.7435 88.6303 24.987 95.3076 21.7991C102.289 18.4664 109.139 19.4176 116.022 22.0578C121.67 24.2245 127.643 24.8539 133.618 25.6244C136.98 26.0582 140.24 27.3004 143.521 28.2627C148.303 29.6664 152.517 32.408 157.091 34.1137C163.547 36.5218 170.265 39.0963 177.462 38.1272C185.066 37.1029 192.499 35.1423 199.391 31.8739C205.124 29.1545 210.393 25.5235 216.11 22.7676C219.266 21.2464 222.915 20.6752 226.352 19.7109C232.822 17.8964 238.046 20.7222 243.453 23.6316C246.791 25.4276 250.613 26.6592 254.374 27.3827C259.876 28.4416 265.438 29.1737 271.093 29.6336C284.694 30.7389 297.778 28.7058 310.328 24.339C316.809 22.0838 323.263 20.0377 329.931 18.5029C330.304 18.4175 330.644 18.2009 331 18.0449C330.903 18.5982 330.999 19.4597 330.676 19.6472C329.626 20.2574 328.441 20.6677 327.276 21.0713C318.959 23.9491 310.69 26.9736 302.293 29.6162C295.648 31.7074 288.896 33.5431 281.759 33.3363C277.742 33.2206 273.71 33.1556 269.699 33.3512C262.847 33.6867 256.436 31.7601 249.976 30.0699C245.454 28.8872 241.387 26.6883 237.173 24.7456C230.989 21.8956 224.345 22.4582 218.256 25.5848C212.468 28.5567 207.052 32.2366 201.16 34.9814C196.442 37.1796 191.308 38.6062 186.263 40.0618C182.95 41.018 179.485 41.7761 176.051 41.9593C172.866 42.1283 169.542 41.7637 166.445 41.0025C162.712 40.0847 159.136 38.5461 155.526 37.1939C149.03 34.761 142.568 32.244 136.066 29.8266C135.194 29.5024 134.177 29.5048 133.22 29.4349C126.727 28.9621 120.392 28.0288 114.341 25.3923C108.772 22.9657 103.155 22.8264 97.2999 25.4344C91.8329 27.8691 86.0696 30.1002 80.1968 31.0904C77.2143 31.5936 73.926 32.861 70.4244 31.6239C67.3146 30.5254 63.7011 31.8318 60.3583 30.4666C57.2273 29.188 54.5015 27.5095 51.9984 25.3236C47.4914 21.3875 42.8129 17.6507 37.3331 14.9963C32.2232 12.522 23.0621 13.6855 18.6152 17.1908C16.9205 18.5264 15.0216 19.711 13.0298 20.5545C12.2951 20.8658 11.0259 19.9987 10 19.6695C10.4243 18.7096 10.5696 17.2911 11.3184 16.8678C15.3403 14.5915 19.3135 11.9235 23.695 10.6492C27.315 9.59586 31.4891 10.0941 35.3964 10.2927C37.3555 10.3924 39.2679 11.3572 41.4522 12.1735Z">
                 </path>
@@ -101,81 +48,8 @@ description: "Hello"
 
 <!-- About Section -->
 <section class="bg-white py-[80px] relative z-10">
-    <div class="container">
-        <div class="flex flex-col gap-[50px]">
-            <div class="flex flex-col gap-[20px] items-center">
-                <h2 class="heading-2-bold text-center text-navy">About Us</h2>
-                <p class="body text-navy text-center max-w-2xl">We are among the most highly qualified sleep consultants
-                    you can
-                    find, and we’re here to support you with expert guidance, compassion, and care every step of the
-                    way. You’re not alone—we’re in this together.</p>
-            </div>
-            <div class="grid gap-[20px] grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center">
-                <div class="flex flex-col w-full items-start gap-[10px]">
-
-                    <div
-                        class="relative w-full h-full border-[15px] lg:border-[20px] border-navy overflow-hidden rounded-[10px] group flex items-end justify-center bg-cream">
-                        {% image "src/assets/images/team-ruth.png", "Portrait of Hannah", "w-full h-auto
-                        max-h-[400px] object-contain transition-opacity duration-300 lg:group-hover:opacity-0 pt-[20px]
-                        px-[20px]" %}
-
-                        <div
-                            class="hidden lg:flex absolute inset-0 bg-cream bg-opacity-90 flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
-                            <p class="heading-4-bold text-navy">Hannah</p>
-                            <p class="body-text text-terqoise max-w-3xs text-center">Qualified Sleep
-                                Consultant</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-start lg:hidden pl-[20px]">
-                        <p class="heading-4-bold text-navy">Hannah</p>
-                        <p class="body-text text-terqoise">Qualified Sleep Consultant</p>
-                    </div>
-
-                </div>
-                <div class="flex flex-col w-full items-start gap-[10px]">
-                    <div
-                        class="relative w-full h-full border-[15px] lg:border-[20px] border-navy overflow-hidden rounded-[10px] group flex items-end justify-center bg-cream">
-                        {% image "src/assets/images/team-carley.png", "Portrait of Carley", "w-full h-auto
-                        max-h-[400px] object-contain transition-opacity duration-300 lg:group-hover:opacity-0 pt-[20px]
-                        px-[20px]" %}
-
-                        <div
-                            class="hidden lg:flex absolute inset-0 bg-cream bg-opacity-90 flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
-                            <p class="heading-4-bold text-navy">Carley</p>
-                            <p class="body-text text-terqoise">Qualified Sleep Consultant</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-start lg:hidden pl-[20px]">
-                        <p class="heading-4-bold text-navy">Carley</p>
-                        <p class="body-text text-terqoise">Qualified Sleep Consultant</p>
-                    </div>
-
-                </div>
-                <div class="flex flex-col w-full items-start gap-[10px]">
-                    <div
-                        class="relative w-full h-full border-[15px] lg:border-[20px] border-navy overflow-hidden rounded-[10px] group flex items-end justify-center bg-cream">
-
-                        {% image "src/assets/images/team-ruth.png", "Portrait of Ruth", "w-full h-auto
-                        max-h-[400px] object-contain transition-opacity duration-300 lg:group-hover:opacity-0 pt-[20px]
-                        px-[20px]" %}
-
-                        <div
-                            class="hidden lg:flex absolute inset-0 bg-cream bg-opacity-90 flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
-                            <p class="heading-4-bold text-navy">Ruth</p>
-                            <p class="body-text text-terqoise">Digital Tech Educator</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-start lg:hidden pl-[20px]">
-                        <p class="heading-4-bold text-navy">Ruth</p>
-                        <p class="body-text text-terqoise">Digital Tech Educator</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    {%- set id = "home" %}
+    {% include "components/team.njk" %}
 
     <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
         <img src="./assets/svgs/section-cloud.svg" aria-hidden="true" focusable="false"
@@ -186,64 +60,8 @@ description: "Hello"
 <!-- Packages Section -->
 <section class="bg-navy py-[80px] relative z-10">
     <div class="container">
-        <div class="flex flex-col gap-[20px]">
-            <div class="flex flex-col gap-[60px]">
-                <h2 class="text-white heading-2-bold text-center">Explore Our Packages</h2>
-                <div class="swiper swiper-packages mySwiperPackages relativ">
-                    <div class="swiper-wrapper">
-                        {%- for package in packages %}
-                        <div class="swiper-slide swiper-slide-packages">
-                            <div class="bg-cream rounded-[10px] py-[20px] px-[30px] h-full w-full">
-                                <div class="flex flex-col gap-[20px] justify-between h-full">
-                                    <div class="flex flex-col gap-[20px]">
-                                        <div class="flex flex-col gap-[10px]">
-                                            <h3 class="heading-5-bold text-navy">{{ package.name }}</h3>
-                                            <h3 class="heading-6-normal text-navy">{{ package.price }}</h3>
-                                        </div>
-                                        <ul class="flex flex-col gap-[10px]">
-                                            {%- if package.features %}
-                                            {%- for feature in package.features %}
-                                            <li class="flex gap-[5px]">
-                                                <img src="/assets/svgs/check.svg" aria-hidden="true"
-                                                    class="w-[24px] h-[24px] bg-[#E6E3D1] rounded-full p-[4px]">
-                                                <p class="body-text text-navy">{{ feature }}</p>
-                                            </li>
-                                            {%- endfor %}
-                                            {%- endif %}
-                                            {%- if package.extras %}
-                                            {%- for extra in package.extras %}
-                                            <li>
-                                                <p class="body-text text-navy">{{ extra }}</p>
-                                            </li>
-                                            {%- endfor %}
-                                            {%- endif %}
-                                        </ul>
-                                    </div>
-                                    <div class="flex flex-col gap-[20px]">
-                                        <p class="small text-navy">{{ package.description }}</p>
-                                        <a href="{{ package.url }}" target="_blank" rel="noopener noreferrer"
-                                            class="button-primary text-center">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {%- endfor %}
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-between items-center gap-[40px]">
-                <p class="text-xs text-white">*Prices are shown in GBP (£), but will be charged as the currency
-                    equivalent.</p>
-                <div class="flex justify-end gap-[10px] pt-[20px]">
-                    <button class="swiper-button-prev" type="button">
-                        <img src="/assets/svgs/chevron-left.svg" alt="Previous package">
-                    </button>
-                    <button class="swiper-button-next" type="button">
-                        <img src="/assets/svgs/chevron-right.svg" alt="Next package">
-                    </button>
-                </div>
-            </div>
-        </div>
+        {%- set id = "home" %}
+        {% include "components/packages.njk" %}
     </div>
 </section>
 
@@ -357,7 +175,7 @@ description: "Hello"
     <div class="container">
         <div class="flex flex-col gap-[50px]">
             <div class="flex flex-col gap-[40px] items-center">
-                <h2 class="heading-2-bold text-center text-cream">58K+ followers on Instagram</h2>
+                <h2 class="heading-2-bold text-center text-cream">80K+ followers on Instagram</h2>
                 <a href="{{ site.social.instagram }}" target="_blank"
                     class="button-primary hover:bg-cream! hover:text-navy! text-center max-w-sm">Follow</a>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-[20px]">
@@ -393,7 +211,7 @@ description: "Hello"
     <div class="container">
         <div class="flex flex-col gap-[50px]">
             <div class="flex flex-col gap-[40px] items-center">
-                <h2 class="heading-2-bold text-center text-navy">72k+ followers on Tik Tok</h2>
+                <h2 class="heading-2-bold text-center text-navy">90k+ followers on Tik Tok</h2>
                 <a href="{{ site.social.tiktok }}" class="button-primary text-center max-w-sm"
                     aria-label="Follow us on TikTok">Follow</a>
                 <div class="swiper swiper-tiktok mySwiperTiktok relative">
@@ -401,7 +219,7 @@ description: "Hello"
                         <div class="swiper-slide swiper-slide-tiktok">
                             <a href="https://vm.tiktok.com/ZNRRJYorp/" target="_blank" aria-label="Follow us on TikTok">
                                 <video autoplay loop muted playsinline class="rounded-[5px]">
-                                    <source src="assets/videos/no-audio/tiktok-one.MP4" type="video/mp4">
+                                    <source src="/assets/videos/no-audio/tiktok-one.MP4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </a>
@@ -409,7 +227,7 @@ description: "Hello"
                         <div class="swiper-slide swiper-slide-tiktok">
                             <a href="https://vm.tiktok.com/ZNRR1vCP9/" target="_blank" aria-label="Follow us on TikTok">
                                 <video autoplay loop muted playsinline class="rounded-[5px]">
-                                    <source src="assets/videos/no-audio/tiktok-two.MP4" type="video/mp4">
+                                    <source src="/assets/videos/no-audio/tiktok-two.MP4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </a>
@@ -417,7 +235,7 @@ description: "Hello"
                         <div class="swiper-slide swiper-slide-tiktok">
                             <a href="https://vm.tiktok.com/ZNRRJY6xj/" target="_blank" aria-label="Follow us on TikTok">
                                 <video autoplay loop muted playsinline class="rounded-[5px]">
-                                    <source src=" assets/videos/no-audio/tiktok-three.MP4" type="video/mp4">
+                                    <source src="/assets/videos/no-audio/tiktok-three.MP4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </a>
@@ -425,7 +243,7 @@ description: "Hello"
                         <div class="swiper-slide swiper-slide-tiktok">
                             <a href="https://vm.tiktok.com/ZNRR19E9y/" target="_blank">
                                 <video autoplay loop muted playsinline class="rounded-[5px]">
-                                    <source src="assets/videos/no-audio/tiktok-four.MP4" type="video/mp4">
+                                    <source src="/assets/videos/no-audio/tiktok-four.MP4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </a>
@@ -433,7 +251,7 @@ description: "Hello"
                         <div class="swiper-slide swiper-slide-tiktok">
                             <a href="https://vm.tiktok.com/ZNRRJJumv/" target="_blank">
                                 <video autoplay loop muted playsinline class="rounded-[5px]">
-                                    <source src="assets/videos/no-audio/tiktok-five.MP4" type="video/mp4">
+                                    <source src="/assets/videos/no-audio/tiktok-five.MP4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </a>
@@ -469,19 +287,6 @@ description: "Hello"
             class="absolute rotate-180 inset-0 w-full h-full object-cover object-center">
     </div>
 </section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-    var swiper = new Swiper(".mySwiperPackages", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
 
 <script>
     var swiperCards = new Swiper(".mySwiperCards", {
