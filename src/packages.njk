@@ -13,56 +13,17 @@ and book your consultation with It Takes a Village today."
     </div>
 </section>
 
-<!-- Hannah Video Section -->
-<section class="bg-white py-[80px] relative z-10">
-    <div class="container">
-        <div class="flex flex-col lg:flex-row gap-[20px]">
-            <div class="flex flex-col flex-1 gap-[20px] justify-center items-center text-center">
-                <h2 class="text-navy heading-2-bold">Welcome!</h2>
-                <p class="body-text max-w-md">Our coach Hannah answers some common questions about our packages.</p>
-            </div>
-            <div class="flex flex-col flex-1 gap-[20px] justify-center items-center">
-                <div class="overflow-hidden rounded-[10px] w-full">
-                    <video controls preload="metadata" class="w-full h-auto">
-                        <source src="/assets/videos/audio/packages-hannah.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
-        <img src="/assets/svgs/section-cloud.svg" alt=""
-            class="absolute inset-0 w-full h-full object-cover object-center">
-    </div>
-</section>
-
-<!-- Carley's Video Section -->
-<section class="bg-cream py-[80px] relative z-10">
-    <div class="container">
-        <div class="flex flex-col lg:flex-row gap-[80px] justify-center items-center">
-            <div class="flex flex-col flex-1 gap-[20px] justify-center items-center order-last lg:order-first">
-                <div class="overflow-hidden rounded-[10px] w-full">
-                    <video controls preload="metadata" class="w-full h-auto">
-                        <source src="/assets/videos/audio/packages-carley.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="flex flex-col flex-1 gap-[20px] justify-center items-center text-center">
-                <h2 class="text-navy heading-2-bold lg:max-w-md">Which package should I book?</h2>
-                <p class="body-text max-w-md">Our Coach Carley explains the differences between the packages so you can
-                    find the right one for you!</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Packages Section -->
 <section class="bg-navy py-[80px] relative z-10">
     <div class="container">
         {% include "components/packages.njk" %}
     </div>
+
+    {# <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
+        <img src="/assets/svgs/section-cloud.svg" alt=""
+            class="absolute inset-0 w-full h-full object-cover object-center">
+    </div> #}
 </section>
 
 {%- set faqItems = faqs.packages %}
 {% include "components/faq.njk" %}
-
