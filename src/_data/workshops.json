@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Sleep Pressure Workshop - 0 months+",
+        "price": "£85",
+        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=88511146",
+        "features": [
+            "2 hour live workshop with Hannah and Carley",
+            "Live Q&A where we answer every question",
+            "Recording sent by email following the workshop"
+        ],
+        "description": ""
+    },
+    {
+        "name": "Night Weaning Workshop - 0 months+",
+        "price": "£85",
+        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=89242104",
+        "features": [
+            "2 hour live workshop with Hannah and Carley",
+            "Live Q&A where we answer every question",
+            "Recording sent by email following the workshop"
+        ],
+        "description": ""
+    },
+    {
+        "name": "Potty Learning Workshop - 18 months+",
+        "price": "£325",
+        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=95116479",
+        "features": [
+            "90 minute workshop live with Carley",
+            "Live Q&A where Carley will answer every question",
+            "Recording sent by email following the workshop",
+            "Weekly group coaching calls with Carley for 4 weeks",
+            "Daily group WhatsApp support with Carley for 4 weeks",
+            "Access to network of families going through potty learning for 4 weeks",
+            "Handbook to keep with strategies and troubleshoot guidance"
+        ],
+        "description": ""
+    }
+]

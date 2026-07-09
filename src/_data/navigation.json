@@ -11,6 +11,10 @@
         "label": "Packages",
         "url": "/packages/"
     },
+     {
+        "label": "Workshops",
+        "url": "/workshops/"
+    },
     {
         "label": "Village Library",
         "url": "/village-library/"

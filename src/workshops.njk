@@ -1,0 +1,43 @@
+---
+layout: base/base.njk
+title: "Workshops"
+description: ""
+---
+
+<section class="pt-[180px] pb-[180px] sticky top-0 z-5 bg-cream">
+    <div class="container">
+        <div class="flex flex-col items-center">
+            <h1 class="text-navy heading-1-bold">Workshops</h1>
+        </div>
+    </div>
+</section>
+
+
+<!-- Workshop intro section -->
+<section class="bg-white py-[80px] relative z-10">
+    <div class="container">
+    <div class="flex flex-col gap-[40px]">
+      <h2 class="text-terqoise heading-2-bold text-center">Check out our selection of workshops</h2>
+      <p class="body text-navy text-center max-w-3xl mx-auto">
+        As some of the most highly qualified sleep consultants in the field, we provide holistic, evidence-informed
+        support that respects your child and your parenting values. We never use cry-it-out methods—instead, we offer
+        gentle, personalised guidance to help your family find a path that feels right for you.
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
+    <img src="/assets/svgs/section-cloud.svg" aria-hiden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center">
+  </div>
+</section>
+
+<!-- Workshops Section -->
+<section class="bg-navy py-[80px] relative z-10">
+    <div class="container">
+        {% include "components/workshops.njk" %}
+    </div>
+</section>
+
+{%- set faqItems = faqs.workshops %}
+{% include "components/faq.njk" %}

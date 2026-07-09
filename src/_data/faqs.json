@@ -56,5 +56,15 @@
             "question": "How can I stay updated on the Village Library?",
             "answer": "We will be sharing updates on the Village Library through our socials, so make sure to follow us for the latest news!"
         }
+    ],
+    "workshops": [
+        {
+            "question": "Will we get access to the recording after?",
+            "answer": "Yes, the recording will be sent to you after the workshop so you can watch it back at your own pace."
+        },
+        {
+            "question": "Will we be able to ask questions during the workshop?",
+            "answer": "Yes, we encourage questions and have included time for a Q&A session within the workshop."
+        }
     ]
 }
