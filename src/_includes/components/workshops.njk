@@ -56,12 +56,14 @@
     <div class="swiper swiperWorkshops-{{ uid }}">
       <div class="swiper-wrapper">
         {%- for workshop in workshops %}
+        {%- if not workshop.comingSoon %}
         <div class="swiper-slide">
           <div class="bg-cream rounded-[10px] py-[20px] px-[30px] h-full w-full">
             <div class="flex flex-col gap-[20px] justify-between h-full">
               <div class="flex flex-col gap-[20px]">
                 <div class="flex flex-col gap-[10px]">
                   <h3 class="heading-5-bold text-navy">{{ workshop.name }}</h3>
+                  <h3 class="heading-6-normal text-navy">{{ workshop.age }}</h3>
                   <h3 class="heading-6-normal text-navy">{{ workshop.price }}</h3>
                 </div>
                 <ul class="flex flex-col gap-[10px]">
@@ -85,12 +87,17 @@
               </div>
               <div class="flex flex-col gap-[20px]">
                 <p class="small text-navy">{{ workshop.description }}</p>
-                <a href="{{ workshop.url }}" target="_blank" rel="noopener noreferrer"
-                  class="button-primary text-center">Book Now</a>
+                <div class="flex gap-[10px]">
+                  <a href="{{ workshop.url }}" target="_blank" rel="noopener noreferrer"
+                    class="button-primary text-center flex-1 min-w-0">Book Now</a>
+                  <button type="button" data-modal-open="{{ uid }}-{{ loop.index0 }}"
+                    class="button-outline text-center flex-1 min-w-0">More Info</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        {%- endif %}
         {%- endfor %}
       </div>
     </div>
@@ -108,6 +115,41 @@
     </div>
   </div>
 </div>
+
+{%- set comingSoon = [] %}
+{%- for workshop in workshops %}
+{%- if workshop.comingSoon %}
+{%- set _ = comingSoon.push(workshop.name) %}
+{%- endif %}
+{%- endfor %}
+{%- if comingSoon.length %}
+<section class="flex flex-col gap-[40px] sm:gap-[60px] pt-[60px] sm:pt-[80px] px-[20px]">
+  <h2 class="text-white heading-2-bold text-center">Workshops Coming Soon</h2>
+  <div class="flex flex-wrap justify-center gap-[20px]">
+    {%- for name in comingSoon %}
+    <div class="relative bg-cream rounded-[20px] py-[28px] px-[28px] sm:py-[36px] sm:px-[40px] flex flex-col gap-[16px] w-full max-w-[440px]">
+      <div class="flex justify-end">
+        <span class="bg-terqoise text-navy text-small-bold tracking-wide py-[7px] px-[14px] rounded-full">
+          Coming Soon
+        </span>
+      </div>
+      <h3 class="heading-5-bold text-navy">{{ name }} Workshop</h3>
+      <p class="text-small text-navy">Keep an eye on this new workshop. More details coming soon.</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{%- for workshop in workshops %}
+{%- if not workshop.comingSoon %}
+{%- set modalId = uid ~ "-" ~ loop.index0 %}
+{%- set entry = workshop %}
+{% include "components/workshop-modal.njk" %}
+{%- endif %}
+{%- endfor %}
+
+{% include "components/modal-assets.njk" %}
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

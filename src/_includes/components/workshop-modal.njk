@@ -1,0 +1,40 @@
+{%- set modalId = modalId | default("details-modal") %}
+
+<dialog id="{{ modalId }}" class="workshop-modal bg-cream w-full h-full md:w-auto md:h-auto md:max-w-[900px] md:max-h-[600px] md:rounded-[20px] p-[30px] md:pb-[30px] m-0 md:m-auto backdrop:bg-black/50">
+  <div class="flex flex-col h-full bg-cream">
+    <div class="flex items-start justify-between gap-[16px] px-[24px] py-[20px] border-b border-navy/10">
+      <div class="flex flex-col gap-[6px]">
+        <h3 class="heading-4-bold text-navy">{{ entry.name }}</h3>
+        {%- if entry.age %}
+        <p class="body-text text-navy">{{ entry.age }}</p>
+        {%- endif %}
+        <p class="body-text text-navy">{{ entry.price }}</p>
+      </div>
+      <button type="button" data-modal-close="{{ modalId }}" aria-label="Close"
+        class="cursor-pointer text-navy text-2xl leading-none w-[44px] h-[44px] bg-black/5 rounded-[5px] flex items-center justify-center flex-shrink-0">&times;</button>
+    </div>
+    <div class="flex-1 overflow-y-auto px-[24px] py-[24px] md:px-[30px]">
+      <div class="flex flex-col gap-[20px] text-navy">
+        {%- for block in entry["more details"] %}
+        {%- if block is string %}
+        {%- if block %}
+        <p class="body-text">{{ block }}</p>
+        {%- endif %}
+        {%- else %}
+        <ul class="flex flex-col gap-[8px] list-disc pl-[20px]">
+          {%- for bullet in block %}
+          {%- if bullet %}
+          <li class="body-text">{{ bullet }}</li>
+          {%- endif %}
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- endfor %}
+        <div class="flex flex-wrap gap-[10px] pt-[8px]">
+          <a href="{{ entry.url }}" target="_blank" rel="noopener noreferrer"
+            class="button-primary text-center">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

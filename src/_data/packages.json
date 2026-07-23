@@ -1,41 +1,73 @@
 [
     {
         "name": "1:1 Personalised Sleep Coaching",
+        "age": "5.5 months+",
         "price": "£290",
         "url": "https://app.acuityscheduling.com/schedule/329c7d69",
         "features": [
-            "1 Hour consultation",
+            "Sleep Diary Assessment",
+            "1 hour consultation Zoom call",
             "3-5 Day Sleep diary review",
-            "3 * 15 Minute Zoom check-ins",
-            "AI Generated Summary"
+            "3 * 15 minute zoom check ins over 8 weeks",
+            "Detailed AI Summary of your consultation and check ins"
         ],
-        "description": "This package helps you gain confidence in improving your little ones sleep with follow up check ins. Use your check in's however you like within 8 weeks. An extensive AI generated summary is also available with every consult and check in."
+        "description": "This package helps you gain confidence in improving your little ones sleep with follow up check ins. Use your check in's however you like within 8 weeks. An extensive AI generated summary is also available with every consult and check in.",
+        "more details": [
+            "Before your 1:1 Personalised Sleep Coaching consultation you will receive an extensive sleep diary to complete which asks you for your littles ones sleep routine but also lots of questions around your child’s temperament, your goals as a family and many more. This is important for us to be able to understand your child’s temperament to tailor the plan ahead for your family. The first week after the consultation is all about getting sleep pressure right and starting work on some strategies if you want to work on those at that stage. Experience has taught us that sometimes sleep pressure is all you need to reach your goals, but if not we’ll have a plan for everything and we can discuss your progress when you check in with us.", 
+            "Your zoom check ins are designed to be spread out over a few weeks so that your little one has time to adapt to the changes because we understand their circadian rhythms take time to catch up to changes as well as navigating any challenges like teething, development and sickness. Parents have told us that they find the Zoom check ins are great for keeping up momentum and making progress and you always know you have us there for support while you’re working on sleep. ",
+            "If you want to continue support after your 8 weeks follow up support is complete you can add on more check in’s or upgrade to the next package by paying the difference."
+        ]
     },
     {
         "name": "The Village",
+        "age": "5.5 months+",
         "price": "£425",
         "url": "https://app.acuityscheduling.com/schedule/329c7d69",
         "features": [
-            "1 Hour consultation",
-            "3-5 Day sleep diary review",
-            "Daily WhatsApp support",
-            "2 weekly group coaching calls",
-            "6 months membership to the village",
+            "Sleep Diary Assessment",
+            "1 hour initial consultation Zoom call",
+            "6 Months group coaching",
+            "2 Weekly group coaching calls",
+            "Daily group WhatsApp support",
             "Access to trusted network of family wellbeing experts"
         ],
-        "description": "This package gives you steady, long-term support for your child's sleep over 6 months. After your 1:1 consultation, you'll join The Village for daily guidance, learning from other parents, and optional weekly group coaching calls. You'll also have access to a trusted network of specialists giving you a truly holistic approach to your child's sleep and wellbeing, as well as yours."
+        "description": "This package gives you steady, long-term support for your child's sleep over 6 months. After your 1:1 consultation, you'll join The Village for daily guidance, learning from other parents, and optional weekly group coaching calls. You'll also have access to a trusted network of specialists giving you a truly holistic approach to your child's sleep and wellbeing, as well as yours.",
+        "more details": [
+            "This package is for families who want sleep support paced to their child’s needs over a longer period (6 months). Your baby’s sleep is up and down thanks to development, teething, illness, to name a few. This package allows you to have sleep support on an ongoing basis for a full 6 months with the Sleep Consultant who completed your original appointment, they will stay with you the whole 6 months making sure you get holistic and tailored support.", 
+            "Before your Village consultation you will receive an extensive sleep diary to complete which asks you for your littles ones sleep routine but also lots of questions around your child’s temperament, your goals as a family and many more. This is important for us to be able to understand your child’s temperament to tailor the plan ahead for your family. The first week after the consultation is all about getting sleep pressure right and starting work on some strategies if you want to work on those at that stage. Experience has taught us that sometimes sleep pressure is all you need to reach your goals, but if not we’ll have a plan for everything and we can discuss your progress when you check in with us.",
+            "After the consultation you’ll be added into ‘The Village’ with other parents of similar baby age groups and temperaments where you can learn from each other and also have regular access to your Sleep Consultant.",
+            "You’ll be entered into a small ‘Sleep Starts’ group with all the other families that begin working on sleep the same month as you. This is where your group WhatsApp support takes place. As well as hearing how other families are progressing you can post questions in the group which will always be answered by your own Sleep Consultant who you had your original consult with.",
+            "In addition, you will have access to The Village called ‘Parents Area’ - this is your community and are the parents of all the ‘Sleep Starts’ groups that came before yours. All of these parents have babies similar to yours – low sleep needs babies, littles that are sensitive to change, littles that were born prematurely, families of multiples, littles that were born with medical difficulties, co sleeping families, feeding to sleep families and more. What all these families have in common is they never want to sleep train and they want to understand their baby more with the aim of getting more sleep and sustaining this long term.",
+            "Group Coaching Calls happen twice a week at least. You can join one of these calls and have a direct conversation with your Sleep Consultant and come up with a plan, strategy or routine tweak right for your little one. Other families are also on these calls so you’ll be able to learn from each other by listening in. Some families have told us they will join to listen and absorb the learning for future.",
+            "Every few weeks we have ‘Q&A Takeover’ from one of our many ‘Family Wellbeing Experts’. These are professionals who Hannah has personally worked with and trusts as a source of information and support that can help you as a parent. You can join the Q&A Takeover groups optionally and ask your questions. Our experts will answer them for you and you’ll have the opportunity to work directly with them if you wish to in future.",
+            "We currently have wellbeing experts in Occupational Health, Postpartum Nutrition, Potty Learning and Digital Wellbeing. Hannah is always adding to this group so there will be more support in future giving you a truly holistic experience.",
+            "At the end of your 6 months you’ll have had community support from other families, wellbeing support from our team of professionals and sleep support from Hannah and her Sleep Consultants. This will have taken you through nap dropping, developmental changes and inevitable illness preparing you for the oncoming years with your little one."
+        ]
     },
     {
         "name": "Sleep Overhaul",
+        "age": "5.5 months+",
         "price": "£695",
         "url": "https://app.acuityscheduling.com/schedule/329c7d69",
         "features": [
-            "1 Hour consultation",
-            "3-5 Day sleep diary review",
-            "5 weeks whatsApp support",
-            "5 weeks of unlimited 15 min Zoom check-ins",
-            "6 months membership to the village"
+            "Sleep Diary Assessment",
+            "1 hour initial consultation Zoom call",
+            "5 Weeks of 1:1 WhatsApp Support",
+            "5 Weeks of Unlimited 1:1 15 minute Zoom Check Ins",
+            "6 months membership to The Village"
         ],
-        "description": "A complete sleep overhaul for determined parents. Over five weeks of 1:1 support, we address multiple sleep challenges, establish a routine that works for your family, and give you the confidence to manage future sleep changes. As well as 6 months access to The Village to ensure you have support through developmental changes and can access holistic support for your family. "
+        "description": "A complete sleep overhaul for determined parents. Over five weeks of 1:1 support, we address multiple sleep challenges, establish a routine that works for your family, and give you the confidence to manage future sleep changes. As well as 6 months access to The Village to ensure you have support through developmental changes and can access holistic support for your family. ",
+        "more details": [
+            "This package is for families that want that personal touch the whole journey as your Sleep Consultant will work alongside your family for at least 7 months.", 
+            "Before your Sleep Overhaul consultation you will receive an extensive sleep diary to complete which asks you for your littles ones sleep routine but also lots of questions around your child’s temperament, your goals as a family and many more. This is important for us to be able to understand your child’s temperament to tailor the plan ahead for your family. The first week after the consultation is all about getting sleep pressure right and starting work on some strategies if you want to work on those at that stage. Experience has taught us that sometimes sleep pressure is all you need to reach your goals, but if not we’ll have a plan for everything and we can discuss your progress when you check in with us.",
+            "Over the next 5 weeks as you put into practise the learning and strategies we have identified you can WhatsApp your consultant directly for support to quickly problem solve or adjust the plan as you and your little one adapt. You also have unlimited 15 minute Zoom check in’s within the 5 weeks you can book with your Sleep Consultant if you prefer or if you need a more detailed conversation as your little one progresses.",
+            "After 5 weeks you’ll be ready to be added into ‘The Village’ with other parents of similar baby age groups and temperaments where you can continue to learn from each other and also have regular catch ups with your Sleep Consultant.",
+            "You’ll be entered into a small ‘Sleep Starts’ group with all the other families that begin working on sleep the same month as you. This is where your group WhatsApp support takes place. As well as hearing how other families are progressing you can post questions in the group which will always be answered by your own Sleep Consultant who you had your original consult with.",
+            "In addition, you will have access to The Village called ‘Parents Area’ - this is your community and are the parents of all the ‘Sleep Starts’ groups that came before yours. All of these parents have babies similar to yours – low sleep needs babies, littles that are sensitive to change, littles that were born prematurely, families of multiples, littles that were born with medical difficulties, co sleeping families, feeding to sleep families and more. What all these families have in common is they never want to sleep train and they want to understand their baby more with the aim of getting more sleep and sustaining this long term.",
+            "Group Coaching Calls happen twice a week at least. You can join one of these calls and have a direct conversation with your Sleep Consultant and come up with a plan, strategy or routine tweak right for your little one. Other families are also on these calls so you’ll be able to learn from each other by listening in. Some families have told us they will join to listen and absorb the learning for future.",
+            "Every few weeks we have ‘Q&A Takeover’ from one of our many ‘Family Wellbeing Experts’. These are professionals who Hannah has personally worked with and trusts as a source of information and support that can help you as a parent. You can join the Q&A Takeover groups optionally and ask your questions. Our experts will answer them for you and you’ll have the opportunity to work directly with them if you wish to in future.",
+            "We currently have wellbeing experts in Occupational Health, Postpartum Nutrition, Potty Learning and Digital Wellbeing. Hannah is always adding to this group so there will be more support in future giving you a truly holistic experience.",
+            "At the end of your 6 months you’ll have had community support from other families, wellbeing support from our team of professionals and sleep support from Hannah and her Sleep Consultants. This will have taken you through nap dropping, developmental changes and inevitable illness preparing you for the oncoming years with your little one."
+        ]
     }
 ]

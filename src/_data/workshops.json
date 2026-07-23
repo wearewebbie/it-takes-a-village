@@ -1,6 +1,7 @@
 [
     {
-        "name": "Sleep Pressure Workshop - 0 months+",
+        "name": "Sleep Pressure Workshop",
+        "age": "0 months+",
         "price": "£85",
         "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=88511146",
         "features": [
@@ -8,10 +9,17 @@
             "Live Q&A where we answer every question",
             "Recording sent by email following the workshop"
         ],
-        "description": ""
+        "more details": [
+            "Sleep pressure is the most important factor in your little one's sleep, and it's the foundation we focus on before making any bigger changes. Whether your goal is independent sleep, moving away from co-sleeping, stopping feeding to sleep, or simply getting longer stretches overnight, all of these are much easier to achieve when sleep pressure is right.",
+            "In this workshop, we'll explain the science behind sleep pressure in a way that's easy to understand. You'll learn how it affects your child's brain, how to work out your little one's individual sleep needs, and how to recognise whether they need more or less sleep pressure.",
+            "We'll also give you a peek behind the curtain and show you exactly how we review a sleep diary. You'll learn how to assess your own child's sleep so you can optimise their sleep pressure and build the strongest possible foundation for better sleep.",
+            "Everything we teach is rooted in science and evidence, but we'll also share the real-life nuances we've learned from supporting hundreds of families. These are the small details that aren't always found in the research but can make a huge difference when you're putting everything into practice.",
+            "By the end of the workshop, you'll understand exactly what sleep pressure is, feel confident adjusting it for your own child, and know how to troubleshoot any bumps in the road as your little one grows and their sleep needs change."
+        ]
     },
     {
-        "name": "Night Weaning Workshop - 0 months+",
+        "name": "Night Weaning Workshop",
+        "age": "0 months+",
         "price": "£85",
         "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=89242104",
         "features": [
@@ -19,10 +27,17 @@
             "Live Q&A where we answer every question",
             "Recording sent by email following the workshop"
         ],
-        "description": ""
+         "more details": [
+            "There are lots of reasons little ones wake during the night, and hunger or habitual feeding can absolutely be one of them. This workshop will help you understand whether your little one is waking because they genuinely need a feed or whether feeding has simply become part of how they return to sleep. You'll also learn how to reduce hunger signals in a developmentally appropriate way.",
+            "Before taking this workshop its important to know that night feeds are completely normal throughout the first year and sometimes beyond. Understanding your little one's biology is key to knowing when to optimise night feeds, when to reduce them, and when they may be ready to night wean. We'll explain the science behind this and take you through our complete night weaning strategy step by step.",
+            "We don't recommend fully night weaning babies under 12 months unless they are developmentally ready, and we'll explain exactly why in the workshop. For babies under 9 months, we'll show you how to optimise night feeds to reduce unnecessary waking while still meeting their nutritional needs. From around 9 months onwards, if your little one is developmentally ready, you can begin taking gradual steps towards night weaning. If your goal is to fully night wean from around 11–12 months onwards, we'll teach you how to do this gently and responsively. Some babies are ready earlier, and we'll show you exactly what signs to look for.",
+            "None of our strategies involve stopping feeds 'cold turkey'. Instead, we work with your little one's biology, helping you understand why they're waking in the first place so you can make changes that are gentle, evidence-based and appropriate for your child.",
+            "By the end of the workshop, you'll know how to tell the difference between hunger and habitual waking, feel confident making decisions around night feeds, and have a clear plan for reducing or stopping them when your little one is truly ready."
+        ]
     },
     {
-        "name": "Potty Learning Workshop - 18 months+",
+        "name": "Potty Learning Workshop",
+        "age": "18 months+",
         "price": "£325",
         "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=95116479",
         "features": [
@@ -34,6 +49,30 @@
             "Access to network of families going through potty learning for 4 weeks",
             "Handbook to keep with strategies and troubleshoot guidance"
         ],
-        "description": ""
+        "more details": [
+            "At It Takes a Village, we take a child-centred approach to everything we do – and potty learning is no different.",
+            "If you're wondering when to start, feeling unsure about your child's readiness, navigating resistance, or simply looking for an approach that feels responsive rather than stressful, this workshop will give you everything you need to approach potty learning with confidence.",
+            "This isn't a one-size-fits-all potty training bootcamp. We know every child is different, which is why we'll help you understand your child's unique temperament, development, sensory needs, communication, and readiness, so you can work with them rather than against them.",
+            "We'll also take you through the science behind potty learning, helping you understand what your child is developmentally capable of, why challenges can arise, and how to support them while still working towards your family's goals.",
+            "Over four weeks you'll receive:",
+            [
+                "A live orientation workshop covering everything you need to know before you begin, plus the opportunity to ask questions during a live Q&A.",
+                "Weekly group coaching calls for four weeks to celebrate progress, troubleshoot challenges, and support you through each stage of the journey.",
+                "Daily WhatsApp support, so you're never left wondering what to do next.",
+                "Practical, personalised guidance that can be adapted to your child's temperament and your family's lifestyle, rather than a rigid method that expects every child to learn the same way."
+            ],
+            "Whether your child is cautious, spirited, highly sensitive, or somewhere in between, we'll help you build a plan that feels achievable, supportive, and right for your family.",
+            "By the end of the programme, you'll have so much more than a child who is confidently using the toilet. You'll understand how to support them through challenges, respond to setbacks with confidence, and navigate potty learning in a way that protects your relationship while supporting their development.",
+            "Places will be intentionally limited so that every family receives the personalised support they need throughout the programme."
+        ]
+    },
+    {
+        "name": "Temperament Workshop",
+        "age": "",
+        "price": "",
+        "url": "",
+        "comingSoon": true,
+        "features": [],
+        "more details": []
     }
 ]

@@ -1,0 +1,101 @@
+<style>
+  dialog.workshop-modal {
+    border: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease allow-discrete;
+  }
+
+  dialog.workshop-modal[open] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @starting-style {
+    dialog.workshop-modal[open] {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+  dialog.workshop-modal::backdrop {
+    opacity: 0;
+    transition: opacity 0.3s ease, display 0.3s ease allow-discrete;
+  }
+
+  dialog.workshop-modal[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    dialog.workshop-modal[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  dialog.workshop-modal.closing {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  dialog.workshop-modal.closing::backdrop {
+    opacity: 0;
+  }
+
+  @media (max-width: 767px) {
+    dialog.workshop-modal {
+      max-width: none;
+      max-height: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    function closeDialog(dialog) {
+      if (!dialog.open) return;
+      dialog.classList.add('closing');
+      dialog.addEventListener('transitionend', function handler() {
+        dialog.classList.remove('closing');
+        dialog.close();
+        document.body.style.overflow = '';
+        dialog.removeEventListener('transitionend', handler);
+      });
+    }
+
+    function init() {
+      document.querySelectorAll('[data-modal-open]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var dialog = document.getElementById(btn.getAttribute('data-modal-open'));
+          if (dialog && dialog.showModal) {
+            dialog.showModal();
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      document.querySelectorAll('dialog.workshop-modal').forEach(function (dialog) {
+        dialog.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            closeDialog(dialog);
+          });
+        });
+
+        dialog.addEventListener('click', function (e) {
+          if (e.target === dialog) closeDialog(dialog);
+        });
+
+        dialog.addEventListener('cancel', function (e) {
+          e.preventDefault();
+          closeDialog(dialog);
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

@@ -351,6 +351,10 @@
         @apply bg-terqoise text-white font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-navy transition-colors duration-300 cursor-pointer;
     }
 
+     .button-outline {
+        @apply border border-navy text-navy font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-navy hover:text-white transition-colors duration-300 cursor-pointer;
+    }
+
     .nav-link-active {
         @apply text-terqoise;
     }
