@@ -3,7 +3,7 @@
         "name": "Sleep Pressure Workshop",
         "age": "0 months+",
         "price": "£85",
-        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=88511146",
+        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=category:1.%20Workshops",
         "features": [
             "2 hour live workshop with Hannah and Carley",
             "Live Q&A where we answer every question",
@@ -21,7 +21,7 @@
         "name": "Night Weaning Workshop",
         "age": "0 months+",
         "price": "£85",
-        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=89242104",
+        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=category:1.%20Workshops",
         "features": [
             "2 hour live workshop with Hannah and Carley",
             "Live Q&A where we answer every question",
@@ -38,32 +38,27 @@
     {
         "name": "Potty Learning Workshop",
         "age": "18 months+",
-        "price": "£325",
-        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=95116479",
+        "price": "£85",
+        "url": "https://app.acuityscheduling.com/schedule.php?owner=36447038&appointmentType=category:1.%20Workshops",
         "features": [
-            "90 minute workshop live with Carley",
+            "90 minute workshop live with Carley ",
             "Live Q&A where Carley will answer every question",
             "Recording sent by email following the workshop",
-            "Weekly group coaching calls with Carley for 4 weeks",
-            "Daily group WhatsApp support with Carley for 4 weeks",
-            "Access to network of families going through potty learning for 4 weeks",
             "Handbook to keep with strategies and troubleshoot guidance"
         ],
         "more details": [
-            "At It Takes a Village, we take a child-centred approach to everything we do – and potty learning is no different.",
-            "If you're wondering when to start, feeling unsure about your child's readiness, navigating resistance, or simply looking for an approach that feels responsive rather than stressful, this workshop will give you everything you need to approach potty learning with confidence.",
-            "This isn't a one-size-fits-all potty training bootcamp. We know every child is different, which is why we'll help you understand your child's unique temperament, development, sensory needs, communication, and readiness, so you can work with them rather than against them.",
-            "We'll also take you through the science behind potty learning, helping you understand what your child is developmentally capable of, why challenges can arise, and how to support them while still working towards your family's goals.",
-            "Over four weeks you'll receive:",
+            "At It Takes a Village, we take a child-centred approach to everything we do - and potty learning is no different. If you want your little one to be using the toilet within a few days or have a deadline we can help you achieve this. If you want it to be more relaxed and longer term, we can help you achieve this. If you simply want to learn more at this point from a science perspective and build a plan for when you and your little one are ready, we can do that too.",
+            "Knowing when to start or even understanding your child's readiness is how most families begin our Potty Learning Workshop. This course will prepare you with all the tools you need to understand readiness from a biological perspective then arm you with strategies to make potty learning a successful stress-free process for you and your little one.",
+            "We do not do ‘one-size-fits-all' in It Takes A Village because every child is different and understanding their temperament, development, sensory needs and communication abilities helps you build the right approach for your little one. This is not a 'potty training bootcamp'. ",
+            "With everything we do here, we'll also take you through the science behind potty learning, helping you understand what your child is developmentally capable of, why challenges can arise, and how to support them while still working towards your family's goals.",
+            "With our extensive experience working with children of Potty Learning age we have developed strategies you can use to help you navigate this process and manage when things don’t go to plan or when you meet resistance - because this will happen. We aim to make sure you never feel like you don't know what to do.",
+            "In the Workshop you'll receive:",
             [
-                "A live orientation workshop covering everything you need to know before you begin, plus the opportunity to ask questions during a live Q&A.",
-                "Weekly group coaching calls for four weeks to celebrate progress, troubleshoot challenges, and support you through each stage of the journey.",
-                "Daily WhatsApp support, so you're never left wondering what to do next.",
-                "Practical, personalised guidance that can be adapted to your child's temperament and your family's lifestyle, rather than a rigid method that expects every child to learn the same way."
+                "A live workshop covering everything you need to know before you begin, plus the opportunity to ask questions during a live Q&A.",
+                "Practical, personalised guidance that can be adapted to your child's temperament and your family's lifestyle, rather than a rigid method that expects every child to learn the same way.",
+                "A handbook you can refer back to when you are met with resistance or an unexpected situation to help you stay on track."
             ],
-            "Whether your child is cautious, spirited, highly sensitive, or somewhere in between, we'll help you build a plan that feels achievable, supportive, and right for your family.",
-            "By the end of the programme, you'll have so much more than a child who is confidently using the toilet. You'll understand how to support them through challenges, respond to setbacks with confidence, and navigate potty learning in a way that protects your relationship while supporting their development.",
-            "Places will be intentionally limited so that every family receives the personalised support they need throughout the programme."
+            "By the end of the workshop, you'll have so much more than the information you need to start. You'll have the confidence and knowledge to apply the right strategies to your child to help them learn to use the toilet confidently."
         ]
     },
     {

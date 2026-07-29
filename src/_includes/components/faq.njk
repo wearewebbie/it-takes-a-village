@@ -12,7 +12,7 @@ faqItems (required) - Array of { question, answer } objects
 <section class="bg-white py-[80px] z-10 relative mb-[656px] sm:mb-[464px]">
   <div class="container">
     <div class="flex flex-col lg:flex-row gap-[40px]">
-      <div class="flex flex-col flex-1 gap-[20px]">
+      <div class="flex flex-col flex-1 gap-[20px]{% if stickyLeftFaq %} lg:sticky lg:top-[120px] lg:self-start{% endif %}">
         <h2 class="text-navy heading-2-bold">Frequently Asked Questions</h2>
         <p class="body-text hidden lg:block">
           Still have a question? <br>Reach out to us by
@@ -52,7 +52,7 @@ faqItems (required) - Array of { question, answer } objects
 
   <div class="absolute bottom-[-100px] left-0 w-screen h-[100px] overflow-hidden">
     <img src="/assets/svgs/section-cloud.svg" alt=""
-      class="absolute rotate-180 inset-0 w-full h-full object-cover object-center">
+      class="absolute rotate-180 inset-0 w-full h-full object-cover object-top">
   </div>
 </section>
 

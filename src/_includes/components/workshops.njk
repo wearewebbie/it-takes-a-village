@@ -103,8 +103,11 @@
     </div>
   </div>
   <div class="flex justify-between items-center gap-[40px] workshops-nav-{{ uid }}">
-    <p class="text-xs text-white">*Prices are shown in GBP (£), but will be charged as the currency
-      equivalent.</p>
+    <div class="flex flex-col gap-[10px]">
+      <p class="text-xs text-white">*Prices are shown in GBP (£), but will be charged as the currency
+        equivalent.</p>
+      <p class="text-xs text-white">*All workshops are standalone and cannot be used to upgrade to a package.</p>
+    </div>
     <div class="flex justify-end gap-[10px] pt-[20px]">
       <button class="swiper-button-prev" type="button">
         <img src="/assets/svgs/chevron-left.svg" alt="Previous package">
@@ -115,31 +118,6 @@
     </div>
   </div>
 </div>
-
-{%- set comingSoon = [] %}
-{%- for workshop in workshops %}
-{%- if workshop.comingSoon %}
-{%- set _ = comingSoon.push(workshop.name) %}
-{%- endif %}
-{%- endfor %}
-{%- if comingSoon.length %}
-<section class="flex flex-col gap-[40px] sm:gap-[60px] pt-[60px] sm:pt-[80px] px-[20px]">
-  <h2 class="text-white heading-2-bold text-center">Workshops Coming Soon</h2>
-  <div class="flex flex-wrap justify-center gap-[20px]">
-    {%- for name in comingSoon %}
-    <div class="relative bg-cream rounded-[20px] py-[28px] px-[28px] sm:py-[36px] sm:px-[40px] flex flex-col gap-[16px] w-full max-w-[440px]">
-      <div class="flex justify-end">
-        <span class="bg-terqoise text-navy text-small-bold tracking-wide py-[7px] px-[14px] rounded-full">
-          Coming Soon
-        </span>
-      </div>
-      <h3 class="heading-5-bold text-navy">{{ name }} Workshop</h3>
-      <p class="text-small text-navy">Keep an eye on this new workshop. More details coming soon.</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-{%- endif %}
 
 {%- for workshop in workshops %}
 {%- if not workshop.comingSoon %}

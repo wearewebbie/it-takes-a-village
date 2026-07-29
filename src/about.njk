@@ -32,10 +32,11 @@ approach to baby sleep, tailored to your child and your family."
 
     <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
     <img src="/assets/svgs/section-cloud.svg" aria-hiden="true"
-      class="absolute inset-0 w-full h-full object-cover object-center">
+      class="absolute inset-0 w-full h-full object-cover object-top">
   </div>
 </section>
 
 
 {%- set faqItems = faqs.about %}
+{%- set stickyLeftFaq = true %}
 {% include "components/faq.njk" %}
