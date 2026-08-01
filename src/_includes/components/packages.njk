@@ -48,16 +48,31 @@
     width: 24px;
     height: 24px;
   }
+
+  .packages-tooltip-{{ uid }} {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+  }
+
+  .packages-tooltip-trigger-{{ uid }}:hover+.packages-tooltip-{{ uid }},
+  .packages-tooltip-trigger-{{ uid }}:focus-visible+.packages-tooltip-{{ uid }},
+  .packages-tooltip-{{ uid }}:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 </style>
 
 <div class="flex flex-col gap-[20px]">
   <div class="flex flex-col gap-[60px]">
-    <h2 class="text-white heading-2-bold text-center">Explore Our Packages</h2>
+    <h2 class="text-white heading-2-bold text-center" data-reveal>Explore Our Packages</h2>
     <div class="swiper swiperPackages-{{ uid }}">
       <div class="swiper-wrapper">
         {%- for package in packages %}
         <div class="swiper-slide">
-          <div class="bg-cream rounded-[10px] py-[20px] px-[30px] h-full w-full">
+          <div class="bg-cream rounded-[10px] py-[20px] px-[30px] h-full w-full" data-reveal
+            data-reveal-delay="{{ (loop.index0 % 3) * 100 }}">
             <div class="flex flex-col gap-[20px] justify-between h-full">
               <div class="flex flex-col gap-[20px]">
                 <div class="flex flex-col gap-[10px]">
@@ -101,13 +116,20 @@
     </div>
   </div>
   <div class="flex justify-between items-center gap-[40px] packages-nav-{{ uid }}">
-    <div class="flex flex-col gap-[10px]">
-      <p class="text-xs text-white">*Prices are shown in GBP (£), but will be charged as the currency
-        equivalent.</p>
-      <p class="text-xs text-white">*You can upgrade between packages at any time.</p>
-      <p class="text-xs text-white">*More check ins can be added at any time.</p>
-      <p class="text-xs text-white">*You can extend your time in the village at any time.</p>
+    <div class="relative flex items-center">
+      <button type="button" class="packages-tooltip-trigger-{{ uid }} flex items-center justify-center w-[24px] h-[24px] rounded-full border border-white text-white text-xs font-bold cursor-pointer"
+        aria-describedby="packages-tooltip-{{ uid }}">
+        i
+        <span class="sr-only">Package information</span>
+      </button>
+      <div id="packages-tooltip-{{ uid }}" role="tooltip"
+        class="packages-tooltip-{{ uid }} absolute top-full left-0 mt-[10px] w-[500px] max-w-[90vw] flex flex-col gap-[8px] bg-cream rounded-[8px] p-[15px] shadow-lg transition-all duration-200 z-10">
+        <p class="text-xs text-navy whitespace-nowrap">* Prices are shown in GBP (£), but will be charged as the currency equivalent</p>
+        <p class="text-xs text-navy whitespace-nowrap">* You can upgrade between packages at any time</p>
+        <p class="text-xs text-navy whitespace-nowrap">* More check-ins can be added at any time</p>
+        <p class="text-xs text-navy whitespace-nowrap">* You can extend your time in the village at any time</p>
       </div>
+    </div>
     <div class="flex justify-end gap-[10px] pt-[20px]">
       <button class="swiper-button-prev" type="button">
         <img src="/assets/svgs/chevron-left.svg" alt="Previous package">

@@ -417,3 +417,37 @@
 [data-accordion-content] {
     max-height: 0px;
 }
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal="left"] {
+    transform: translateX(-40px);
+}
+
+[data-reveal="right"] {
+    transform: translateX(40px);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Swiper containers clip overflow tightly to slide height, so a translating
+   reveal gets cut off at the bottom/side instead of sliding smoothly.
+   Fade-only inside carousels avoids the clipped "grows into view" artifact. */
+.swiper [data-reveal] {
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

@@ -9,7 +9,8 @@
                 <div class="flex flex-col gap-[10px]">
                     <a href="mailto:{{ site.email }}" class="underline body text-navy">{{ site.email }}</a>
                     <div class="flex items-center gap-[10px]">
-                        <a href="{{ site.social.instagram }}" target="_blank" aria-label="Follow us on Instagram"><svg
+                        <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow us on Instagram"><svg
                                 width=" 24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -17,7 +18,8 @@
                                     fill="currentColor"></path>
                             </svg>
                         </a>
-                        <a href="{{ site.social.tiktok }}" target="_blank" aria-label="Follow us on TikTok"> <svg
+                        <a href="{{ site.social.tiktok }}" target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow us on TikTok"> <svg
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 class="w-[20px] h-[20px]">
                                 <path fill="currentColor"
@@ -97,11 +99,11 @@
         <hr class="border-t-[4px] border-dashed border-terqoise">
 
         <div class="flex flex-col lg:flex-row justify-center text-center lg:justify-between gap-[10px]">
-            <a href="/privacy-policy" target="_blank" class="underline small text-navy">Privacy Policy</a>
+            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" class="underline small text-navy">Privacy Policy</a>
             <p class="small text-navy font-bold!">© {{ year }} Designed and Developed by <a href="https://wearewebbie.com" target="_blank"
-                    class="underline">Webbie</a>
+                    rel="noopener noreferrer" class="underline">Webbie</a>
             </p>
-            <a href="/terms-and-conditions" target="_blank" class="underline small text-navy">Terms &amp; Conditions</a>
+            <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" class="underline small text-navy">Terms &amp; Conditions</a>
         </div>
     </div>
 </footer>

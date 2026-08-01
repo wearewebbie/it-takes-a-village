@@ -55,7 +55,8 @@
     function closeDialog(dialog) {
       if (!dialog.open) return;
       dialog.classList.add('closing');
-      dialog.addEventListener('transitionend', function handler() {
+      dialog.addEventListener('transitionend', function handler(e) {
+        if (e.target !== dialog) return;
         dialog.classList.remove('closing');
         dialog.close();
         document.body.style.overflow = '';
