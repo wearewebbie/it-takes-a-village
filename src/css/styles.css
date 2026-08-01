@@ -43,8 +43,13 @@
         all: revert;
     }
 
+    html {
+        overflow-x: hidden;
+    }
+
     body {
         font-family: "Solway", sans-serif;
+        overflow-x: hidden;
     }
 
 
