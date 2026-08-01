@@ -20,6 +20,8 @@ export default function (eleventyConfig) {
             widths = [400, 800, 1200],
             formats = ['avif', 'webp', 'jpeg'],
             sizes = '100vw',
+            loading = 'lazy',
+            fetchpriority,
         } = options;
 
         const metadata = await Image(src, {
@@ -37,8 +39,9 @@ export default function (eleventyConfig) {
             alt,
             class: cls,
             sizes,
-            loading: 'lazy',
+            loading,
             decoding: 'async',
+            ...(fetchpriority ? { fetchpriority } : {}),
         });
     });
 
