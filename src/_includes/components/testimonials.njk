@@ -1,0 +1,171 @@
+{#
+Testimonials Section Component
+
+Usage:
+{%- set testimonialType = "package" %}
+{% include "components/testimonials.njk" %}
+
+Parameters:
+testimonialType (optional) - "package" or "workshop", filters testimonials.json by type. Omit to show all.
+id (optional) - unique id when this component appears more than once on a page.
+#}
+
+{%- set uid = id | default("testimonials") %}
+{%- set filteredTestimonials = testimonials | byType(testimonialType) if testimonialType else testimonials %}
+
+{%- if filteredTestimonials.length %}
+<style>
+  .swiperTestimonials-{{ uid }} {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px !important;
+  }
+
+  .swiperTestimonials-{{ uid }} .swiper-slide {
+    height: auto !important;
+  }
+
+  .swiperTestimonials-{{ uid }} .swiper-pagination-bullet {
+    background-color: var(--color-navy);
+    opacity: 0.3;
+  }
+
+  .swiperTestimonials-{{ uid }} .swiper-pagination-bullet-active {
+    background-color: var(--color-terqoise);
+    opacity: 1;
+  }
+
+  .testimonials-nav-{{ uid }} .swiper-button-next::after,
+  .testimonials-nav-{{ uid }} .swiper-button-prev::after {
+    content: none;
+  }
+
+  .testimonials-nav-{{ uid }} .swiper-button-next,
+  .testimonials-nav-{{ uid }} .swiper-button-prev {
+    position: static;
+    transform: none;
+    inset: auto;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background-color: #E6E3D1;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .testimonials-nav-{{ uid }} .swiper-button-next img,
+  .testimonials-nav-{{ uid }} .swiper-button-prev img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .swiperTestimonials-{{ uid }} .swiper-wrapper {
+    transition: height 0.4s ease-in-out;
+  }
+
+  .testimonial-content-{{ uid }} {
+    height: 168px;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-content-{{ uid }} {
+      height: 196px;
+    }
+  }
+</style>
+
+<div class="flex flex-col gap-[40px]">
+  <h2 class="text-navy heading-2-bold text-center" data-reveal>What Families Are Saying</h2>
+  <div class="flex flex-col items-center gap-[20px]">
+    <div class="swiper swiperTestimonials-{{ uid }} max-w-3xl">
+      <div class="swiper-wrapper">
+        {%- for testimonial in filteredTestimonials %}
+        <div class="swiper-slide">
+          <div class="bg-white rounded-[10px] py-[40px] px-[30px] lg:px-[60px] h-full w-full flex flex-col items-center gap-[20px] text-center"
+            data-reveal data-reveal-delay="{{ (loop.index0 % 3) * 100 }}">
+            <span class="heading-1-bold text-terqoise leading-[0.6]" aria-hidden="true">&ldquo;</span>
+            <div class="testimonial-content-{{ uid }} flex flex-col gap-[10px] w-full" data-testimonial-content>
+              {%- for paragraph in testimonial.testimonial %}
+              <p class="body text-navy">{{ paragraph }}</p>
+              {%- endfor %}
+            </div>
+            <button type="button" class="hidden text-terqoise body-bold underline cursor-pointer"
+              data-testimonial-toggle aria-expanded="false">Read More</button>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="flex justify-center gap-[10px] testimonials-nav-{{ uid }}">
+      <button class="swiper-button-prev" type="button">
+        <img src="/assets/svgs/chevron-left.svg" alt="Previous testimonial">
+      </button>
+      <button class="swiper-button-next" type="button">
+        <img src="/assets/svgs/chevron-right.svg" alt="Next testimonial">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  (function () {
+    var uid = '{{ uid }}';
+    var containerSelector = '.swiperTestimonials-' + uid;
+    var navSelector = '.testimonials-nav-' + uid;
+    var containerEl = document.querySelector(containerSelector);
+    if (!containerEl) return;
+
+    var swiperInstance = new Swiper(containerSelector, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: containerSelector + ' .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: navSelector + ' .swiper-button-next',
+        prevEl: navSelector + ' .swiper-button-prev',
+      },
+    });
+
+    var wrapperEl = containerEl.querySelector('.swiper-wrapper');
+
+    containerEl.querySelectorAll('[data-testimonial-content]').forEach(function (content) {
+      var toggle = content.nextElementSibling;
+      if (!toggle || !toggle.hasAttribute('data-testimonial-toggle')) return;
+
+      var fixedHeight = content.clientHeight;
+      if (content.scrollHeight <= fixedHeight + 2) return;
+
+      // Reveal the toggle first so it's included in the chrome measurement below —
+      // otherwise the wrapper would be sized short by the button's own height.
+      toggle.classList.remove('hidden');
+
+      // Fixed height of everything around the content block (icon, gaps, padding, button), so the
+      // wrapper's expanded target height can be set in lockstep with content's own transition
+      // instead of waiting on layout to settle.
+      var slideEl = content.closest('.swiper-slide');
+      var chromeHeight = slideEl.offsetHeight - fixedHeight;
+
+      toggle.addEventListener('click', function () {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        var targetContentHeight = expanded ? fixedHeight : content.scrollHeight;
+
+        content.style.height = targetContentHeight + 'px';
+        wrapperEl.style.height = (chromeHeight + targetContentHeight) + 'px';
+        toggle.textContent = expanded ? 'Read More' : 'Read Less';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+      });
+    });
+  })();
+</script>
+{%- endif %}

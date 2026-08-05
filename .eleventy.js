@@ -50,6 +50,10 @@ export default function (eleventyConfig) {
         return stats.mtime.toISOString().split("T")[0];
     });
 
+    eleventyConfig.addFilter("byType", function (arr, type) {
+        return (arr || []).filter(item => item.type === type);
+    });
+
     eleventyConfig.addLiquidFilter("dateFormat", function (date) {
         return new Date(date).toISOString().split("T")[0];
     });
