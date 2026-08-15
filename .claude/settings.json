@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(SCRATCH=/private/tmp/claude-501/-Users-hollytumelty-Desktop-Webbie-ITAV-it-takes-a-village/ce82af9e-c5ba-49cf-bd5a-faf91c9ea7ec/scratchpad node /private/tmp/claude-501/-Users-hollytumelty-Desktop-Webbie-ITAV-it-takes-a-village/ce82af9e-c5ba-49cf-bd5a-faf91c9ea7ec/scratchpad/diag.mjs)"
+    ]
+  }
+}

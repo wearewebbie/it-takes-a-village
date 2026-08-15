@@ -12,39 +12,35 @@ id (optional) - unique id when this component appears more than once on a page.
 
 {%- set uid = id | default("testimonials") %}
 {%- set filteredTestimonials = testimonials | byType(testimonialType) if testimonialType else testimonials %}
+{%- set pages = filteredTestimonials | batch(8) %}
 
 {%- if filteredTestimonials.length %}
 <style>
-  .swiperTestimonials-{{ uid }} {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 50px !important;
+  .testimonial-bubble-{{ uid }} {
+    position: relative;
   }
 
-  .swiperTestimonials-{{ uid }} .swiper-slide {
-    height: auto !important;
+  .testimonial-bubble-{{ uid }}::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 0 0 4px 0;
+    transform: rotate(45deg);
   }
 
-  .swiperTestimonials-{{ uid }} .swiper-pagination-bullet {
-    background-color: var(--color-navy);
-    opacity: 0.3;
+  .testimonials-bubbles-{{ uid }} > div:nth-child(odd) .testimonial-bubble-{{ uid }}::after {
+    left: 28px;
   }
 
-  .swiperTestimonials-{{ uid }} .swiper-pagination-bullet-active {
-    background-color: var(--color-terqoise);
-    opacity: 1;
+  .testimonials-bubbles-{{ uid }} > div:nth-child(even) .testimonial-bubble-{{ uid }}::after {
+    right: 28px;
   }
 
-  .testimonials-nav-{{ uid }} .swiper-button-next::after,
-  .testimonials-nav-{{ uid }} .swiper-button-prev::after {
-    content: none;
-  }
-
-  .testimonials-nav-{{ uid }} .swiper-button-next,
-  .testimonials-nav-{{ uid }} .swiper-button-prev {
-    position: static;
-    transform: none;
-    inset: auto;
+  .testimonials-nav-{{ uid }} button[data-testimonial-prev],
+  .testimonials-nav-{{ uid }} button[data-testimonial-next] {
     width: 44px;
     height: 44px;
     padding: 10px;
@@ -57,115 +53,114 @@ id (optional) - unique id when this component appears more than once on a page.
     cursor: pointer;
   }
 
-  .testimonials-nav-{{ uid }} .swiper-button-next img,
-  .testimonials-nav-{{ uid }} .swiper-button-prev img {
+  .testimonials-nav-{{ uid }} button[data-testimonial-prev]:disabled,
+  .testimonials-nav-{{ uid }} button[data-testimonial-next]:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .testimonials-nav-{{ uid }} button[data-testimonial-prev] img,
+  .testimonials-nav-{{ uid }} button[data-testimonial-next] img {
     width: 24px;
     height: 24px;
   }
 
-  .swiperTestimonials-{{ uid }} .swiper-wrapper {
-    transition: height 0.4s ease-in-out;
+  .testimonials-nav-{{ uid }} button[data-testimonial-dot] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: var(--color-navy);
+    opacity: 0.3;
+    cursor: pointer;
   }
 
-  .testimonial-content-{{ uid }} {
-    height: 168px;
-    overflow: hidden;
-    transition: height 0.4s ease-in-out;
-  }
-
-  @media (min-width: 1024px) {
-    .testimonial-content-{{ uid }} {
-      height: 196px;
-    }
+  .testimonials-nav-{{ uid }} button[data-testimonial-dot][aria-current="true"] {
+    background-color: var(--color-terqoise);
+    opacity: 1;
   }
 </style>
 
 <div class="flex flex-col gap-[40px]">
   <h2 class="text-navy heading-2-bold text-center" data-reveal>What Families Are Saying</h2>
-  <div class="flex flex-col items-center gap-[20px]">
-    <div class="swiper swiperTestimonials-{{ uid }} max-w-3xl">
-      <div class="swiper-wrapper">
-        {%- for testimonial in filteredTestimonials %}
-        <div class="swiper-slide">
-          <div class="bg-white rounded-[10px] py-[40px] px-[30px] lg:px-[60px] h-full w-full flex flex-col items-center gap-[20px] text-center"
-            data-reveal data-reveal-delay="{{ (loop.index0 % 3) * 100 }}">
-            <span class="heading-1-bold text-terqoise leading-[0.6]" aria-hidden="true">&ldquo;</span>
-            <div class="testimonial-content-{{ uid }} flex flex-col gap-[10px] w-full" data-testimonial-content>
-              {%- for paragraph in testimonial.testimonial %}
-              <p class="body text-navy">{{ paragraph }}</p>
-              {%- endfor %}
-            </div>
-            <button type="button" class="hidden text-terqoise body-bold underline cursor-pointer"
-              data-testimonial-toggle aria-expanded="false">Read More</button>
-          </div>
+
+  <div class="testimonials-pages-{{ uid }}">
+    {%- for page in pages %}
+    {%- set pageIndex = loop.index0 %}
+    <div class="testimonials-bubbles-{{ uid }} flex flex-wrap justify-center gap-x-[24px] gap-y-[32px]{% if not loop.first %} hidden{% endif %}"
+      data-testimonial-page>
+      {%- for testimonial in page %}
+      {%- set absIndex = (pageIndex * 8) + loop.index0 %}
+      {%- set colorClass = ["bg-white", "bg-terqoise/15", "bg-purple/15", "bg-orange/15"][absIndex % 4] %}
+      {%- set rotateClass = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"][absIndex % 4] %}
+      <div data-reveal data-reveal-delay="{{ (loop.index0 % 4) * 100 }}">
+        <div class="testimonial-bubble-{{ uid }} {{ colorClass }} {{ rotateClass }} rounded-[20px] py-[18px] px-[24px] max-w-[260px]">
+          <p class="body-medium text-navy">&ldquo;{{ testimonial.snippet }}&rdquo;</p>
         </div>
-        {%- endfor %}
       </div>
-      <div class="swiper-pagination"></div>
+      {%- endfor %}
     </div>
-    <div class="flex justify-center gap-[10px] testimonials-nav-{{ uid }}">
-      <button class="swiper-button-prev" type="button">
-        <img src="/assets/svgs/chevron-left.svg" alt="Previous testimonial">
-      </button>
-      <button class="swiper-button-next" type="button">
-        <img src="/assets/svgs/chevron-right.svg" alt="Next testimonial">
-      </button>
-    </div>
+    {%- endfor %}
   </div>
+
+  {%- if pages.length > 1 %}
+  <div class="flex justify-center items-center gap-[16px] testimonials-nav-{{ uid }}">
+    <button type="button" data-testimonial-prev aria-label="Previous testimonials">
+      <img src="/assets/svgs/chevron-left.svg" alt="">
+    </button>
+    <div class="flex gap-[8px]">
+      {%- for page in pages %}
+      <button type="button" data-testimonial-dot aria-current="{% if loop.first %}true{% else %}false{% endif %}"
+        aria-label="Show testimonials page {{ loop.index }}"></button>
+      {%- endfor %}
+    </div>
+    <button type="button" data-testimonial-next aria-label="Next testimonials">
+      <img src="/assets/svgs/chevron-right.svg" alt="">
+    </button>
+  </div>
+  {%- endif %}
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+{%- if pages.length > 1 %}
 <script>
   (function () {
     var uid = '{{ uid }}';
-    var containerSelector = '.swiperTestimonials-' + uid;
-    var navSelector = '.testimonials-nav-' + uid;
-    var containerEl = document.querySelector(containerSelector);
-    if (!containerEl) return;
+    var nav = document.querySelector('.testimonials-nav-' + uid);
+    var pagesContainer = document.querySelector('.testimonials-pages-' + uid);
+    var pagesEls = Array.prototype.slice.call(document.querySelectorAll('.testimonials-pages-' + uid + ' [data-testimonial-page]'));
+    if (!nav || !pagesEls.length) return;
 
-    var swiperInstance = new Swiper(containerSelector, {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      pagination: {
-        el: containerSelector + ' .swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: navSelector + ' .swiper-button-next',
-        prevEl: navSelector + ' .swiper-button-prev',
-      },
+    // Measure every page's natural height while they're all still visible (before any
+    // get hidden below), so the container can be pinned to the tallest one — otherwise
+    // switching to a shorter page (e.g. a trailing page with fewer items) would shrink
+    // the section and shift everything below it.
+    var maxHeight = pagesEls.reduce(function (max, page) {
+      return Math.max(max, page.offsetHeight);
+    }, 0);
+    pagesContainer.style.minHeight = maxHeight + 'px';
+
+    var dots = Array.prototype.slice.call(nav.querySelectorAll('[data-testimonial-dot]'));
+    var prevBtn = nav.querySelector('[data-testimonial-prev]');
+    var nextBtn = nav.querySelector('[data-testimonial-next]');
+    var current = 0;
+
+    function show(index) {
+      current = index;
+      pagesEls.forEach(function (page, i) { page.classList.toggle('hidden', i !== index); });
+      dots.forEach(function (dot, i) { dot.setAttribute('aria-current', i === index ? 'true' : 'false'); });
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === pagesEls.length - 1;
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { show(i); });
     });
+    prevBtn.addEventListener('click', function () { if (current > 0) show(current - 1); });
+    nextBtn.addEventListener('click', function () { if (current < pagesEls.length - 1) show(current + 1); });
 
-    var wrapperEl = containerEl.querySelector('.swiper-wrapper');
-
-    containerEl.querySelectorAll('[data-testimonial-content]').forEach(function (content) {
-      var toggle = content.nextElementSibling;
-      if (!toggle || !toggle.hasAttribute('data-testimonial-toggle')) return;
-
-      var fixedHeight = content.clientHeight;
-      if (content.scrollHeight <= fixedHeight + 2) return;
-
-      // Reveal the toggle first so it's included in the chrome measurement below —
-      // otherwise the wrapper would be sized short by the button's own height.
-      toggle.classList.remove('hidden');
-
-      // Fixed height of everything around the content block (icon, gaps, padding, button), so the
-      // wrapper's expanded target height can be set in lockstep with content's own transition
-      // instead of waiting on layout to settle.
-      var slideEl = content.closest('.swiper-slide');
-      var chromeHeight = slideEl.offsetHeight - fixedHeight;
-
-      toggle.addEventListener('click', function () {
-        var expanded = toggle.getAttribute('aria-expanded') === 'true';
-        var targetContentHeight = expanded ? fixedHeight : content.scrollHeight;
-
-        content.style.height = targetContentHeight + 'px';
-        wrapperEl.style.height = (chromeHeight + targetContentHeight) + 'px';
-        toggle.textContent = expanded ? 'Read More' : 'Read Less';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-      });
-    });
+    show(0);
   })();
 </script>
+{%- endif %}
 {%- endif %}
