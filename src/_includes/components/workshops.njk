@@ -1,4 +1,10 @@
 {%- set uid = id | default("workshops") %}
+{%- set isCream = variant == "cream" %}
+{%- set cardBg = 'bg-cream' if isCream else 'bg-navy' %}
+{%- set cardText = 'text-navy' if isCream else 'text-cream' %}
+{%- set outlineButtonClasses = 'button-outline' if isCream else 'border border-cream text-cream font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-cream hover:text-navy transition-colors duration-300 cursor-pointer' %}
+{%- set checkCircleBg = 'bg-[#E6E3D1]' if isCream else 'bg-[#012236]' %}
+{%- set checkFill = '#012d48' if isCream else '#f4f1e1' %}
 
 <style>
   .swiperWorkshops-{{ uid }} {
@@ -11,7 +17,7 @@
   }
 
   .swiperWorkshops-{{ uid }} .swiper-slide {
-    width: 450px;
+    width: 485px;
     height: auto !important;
   }
 
@@ -64,50 +70,50 @@
   }
 </style>
 
-<div class="flex flex-col gap-[20px]">
-  <div class="flex flex-col gap-[60px]">
-    <h2 class="text-white heading-2-bold text-center" data-reveal>Explore Our Workshops</h2>
-    <p class="body-text text-white text-center md:hidden -mt-[30px] -mb-[30px]" data-reveal data-reveal-delay="50">(Swipe for more...)</p>
     <div class="swiper swiperWorkshops-{{ uid }}">
       <div class="swiper-wrapper">
         {%- for workshop in workshops %}
         {%- if not workshop.comingSoon %}
         <div class="swiper-slide">
-          <div class="bg-cream rounded-[10px] py-[20px] px-[30px] h-full w-full" data-reveal
+          <div class="{{ cardBg }} rounded-[10px] py-[20px] px-[30px] h-full w-full" data-reveal
             data-reveal-delay="{{ (loop.index0 % 3) * 100 }}">
             <div class="flex flex-col gap-[20px] justify-between h-full">
               <div class="flex flex-col gap-[20px]">
                 <div class="flex flex-col gap-[10px]">
-                  <h3 class="heading-5-bold text-navy">{{ workshop.name }}</h3>
-                  <h3 class="heading-6-normal text-navy">{{ workshop.age }}</h3>
-                  <h3 class="heading-6-normal text-navy">{{ workshop.price }}</h3>
+                  <h3 class="heading-5-bold {{ cardText }}">{{ workshop.name }}</h3>
+                  <h3 class="heading-6-normal {{ cardText }}">{{ workshop.age }}</h3>
+                  <h3 class="heading-6-normal {{ cardText }}">{{ workshop.price }}</h3>
                 </div>
                 <ul class="flex flex-col gap-[10px]">
                   {%- if workshop.features %}
                   {%- for feature in workshop.features %}
                   <li class="flex gap-[5px]">
-                    <img src="/assets/svgs/check.svg" aria-hidden="true"
-                      class="w-[24px] h-[24px] bg-[#E6E3D1] rounded-full p-[4px]">
-                    <p class="body-text text-navy">{{ feature }}</p>
+                    <span aria-hidden="true"
+                      class="w-[24px] h-[24px] {{ checkCircleBg }} rounded-full p-[4px] flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="{{ checkFill }}" class="w-full h-full">
+                        <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                      </svg>
+                    </span>
+                    <p class="body-text {{ cardText }}">{{ feature }}</p>
                   </li>
                   {%- endfor %}
                   {%- endif %}
                   {%- if workshop.extras %}
                   {%- for extra in workshop.extras %}
                   <li>
-                    <p class="body-text text-navy">{{ extra }}</p>
+                    <p class="body-text {{ cardText }}">{{ extra }}</p>
                   </li>
                   {%- endfor %}
                   {%- endif %}
                 </ul>
               </div>
               <div class="flex flex-col gap-[20px]">
-                <p class="small text-navy">{{ workshop.description }}</p>
+                <p class="small {{ cardText }}">{{ workshop.description }}</p>
                 <div class="flex gap-[10px]">
                   <a href="{{ workshop.url }}" target="_blank" rel="noopener noreferrer"
                     class="button-primary text-center flex-1 min-w-0">Book Now</a>
                   <button type="button" data-modal-open="{{ uid }}-{{ loop.index0 }}"
-                    class="button-outline text-center flex-1 min-w-0">More Info</button>
+                    class="{{ outlineButtonClasses }} text-center flex-1 min-w-0">More Info</button>
                 </div>
               </div>
             </div>
@@ -117,10 +123,9 @@
         {%- endfor %}
       </div>
     </div>
-  </div>
   <div class="flex justify-between items-center gap-[40px] workshops-nav-{{ uid }}">
     <div class="relative flex items-center">
-      <button type="button" class="workshops-tooltip-trigger-{{ uid }} flex items-center justify-center w-[24px] h-[24px] rounded-full border border-white text-white text-xs font-bold cursor-pointer"
+      <button type="button" class="workshops-tooltip-trigger-{{ uid }} flex items-center justify-center w-[24px] h-[24px] rounded-full border {{ 'border-navy text-navy' if isCream else 'border-white text-white' }} text-xs font-bold cursor-pointer"
         aria-describedby="workshops-tooltip-{{ uid }}">
         i
         <span class="sr-only">Workshop information</span>
@@ -140,7 +145,6 @@
       </button>
     </div>
   </div>
-</div>
 
 {%- for workshop in workshops %}
 {%- if not workshop.comingSoon %}

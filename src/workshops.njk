@@ -35,16 +35,29 @@ description: ""
 <!-- Workshops Section -->
 <section class="bg-navy py-[80px] relative z-20">
     <div class="container">
+                <div class="flex flex-col gap-[20px]">
+            <div class="flex flex-col gap-[60px]">
+                <h2 class="text-cream heading-2-bold text-center" data-reveal>Explore Our Workshops</h2>
+                <p class="body-text text-cream text-center md:hidden -mt-[30px] -mb-[30px]" data-reveal data-reveal-delay="50">(Swipe for more...)</p>
+                {%- set variant = "cream" %}
         {% include "components/workshops.njk" %}
     </div>
+              </div>
+        </div>
 </section>
 
 <!-- Testimonials Section -->
-<section class="bg-cream py-[80px] relative z-10">
+<section class="bg-cream pt-[80px] pb-[180px] relative z-10">
     <div class="container">
         {%- set testimonialType = "workshop" %}
         {% include "components/testimonials.njk" %}
     </div>
+
+        <div class="absolute bottom-0 left-0 w-screen h-[100px] overflow-hidden">
+        <img src="/assets/svgs/section-cloud.svg" aria-hidden="true" focusable="false"
+            class="absolute inset-0 w-full h-full object-cover object-top">
+    </div>
+    
 </section>
 
 <!-- Workshops Coming Soon Section -->
@@ -82,7 +95,7 @@ description: ""
     </div>
 
      <div class="absolute bottom-[-100px] left-0 w-screen h-[100px] overflow-hidden">
-    <img src="/assets/svgs/section-cloud.svg" alt=""
+    <img src="/assets/svgs/section-cloud.svg"
       class="absolute rotate-180 inset-0 w-full h-full object-cover object-top">
   </div>
 </section>
