@@ -24,7 +24,7 @@ If you have any questions or concerns about this policy please contact us at {{ 
 
 ## 3. What Information We Collect
 
-We only collect personal information that you voluntarily provide when you submit our contact form. This may include:
+We only collect personal information that you voluntarily provide when you contact us directly, for example by email. This may include:
 
 - Your name
 - Your email address
@@ -44,15 +44,13 @@ We will never use your information for marketing purposes without your explicit 
 
 ## 5. How Your Data is Processed
 
-Our contact form is powered by FormSpark, a third party form processing service. When you submit any of our forms your data is transmitted to and processed on FormSpark's servers, where it is temporarily stored before being forwarded to us via email.
+When you contact us directly, for example by email, your message is sent to us and is not processed, stored, or transmitted through any third party form processing service.
 
 We do not operate our own database or server to store your personal data. Once your enquiry has been responded to, we retain your email correspondence only for as long as is necessary for legitimate business record keeping purposes.
 
-You can review FormSpark's privacy policy at [https://formspark.io/legal/privacy-policy/](https://formspark.io/legal/privacy-policy/).
-
 ## 6. Sharing Your Information
 
-We do not sell, trade, or share your personal information with any third parties beyond FormSpark as described in section 5. Your data will never be passed on to any other organisation without your explicit consent, except where required by law.
+We do not sell, trade, or share your personal information with any third parties. Your data will never be passed on to any other organisation without your explicit consent, except where required by law.
 
 ## 7. Third Party Links
 

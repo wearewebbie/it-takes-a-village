@@ -1,0 +1,166 @@
+{#
+Testimonials Section Component
+
+Usage:
+{%- set testimonialType = "package" %}
+{% include "components/testimonials.njk" %}
+
+Parameters:
+testimonialType (optional) - "package" or "workshop", filters testimonials.json by type. Omit to show all.
+id (optional) - unique id when this component appears more than once on a page.
+#}
+
+{%- set uid = id | default("testimonials") %}
+{%- set filteredTestimonials = testimonials | byType(testimonialType) if testimonialType else testimonials %}
+{%- set pages = filteredTestimonials | batch(8) %}
+
+{%- if filteredTestimonials.length %}
+<style>
+  .testimonial-bubble-{{ uid }} {
+    position: relative;
+  }
+
+  .testimonial-bubble-{{ uid }}::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 0 0 4px 0;
+    transform: rotate(45deg);
+  }
+
+  .testimonials-bubbles-{{ uid }} > div:nth-child(odd) .testimonial-bubble-{{ uid }}::after {
+    left: 28px;
+  }
+
+  .testimonials-bubbles-{{ uid }} > div:nth-child(even) .testimonial-bubble-{{ uid }}::after {
+    right: 28px;
+  }
+
+  .testimonials-nav-{{ uid }} button[data-testimonial-prev],
+  .testimonials-nav-{{ uid }} button[data-testimonial-next] {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background-color: #E6E3D1;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .testimonials-nav-{{ uid }} button[data-testimonial-prev]:disabled,
+  .testimonials-nav-{{ uid }} button[data-testimonial-next]:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .testimonials-nav-{{ uid }} button[data-testimonial-prev] img,
+  .testimonials-nav-{{ uid }} button[data-testimonial-next] img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .testimonials-nav-{{ uid }} button[data-testimonial-dot] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: var(--color-navy);
+    opacity: 0.3;
+    cursor: pointer;
+  }
+
+  .testimonials-nav-{{ uid }} button[data-testimonial-dot][aria-current="true"] {
+    background-color: var(--color-terqoise);
+    opacity: 1;
+  }
+</style>
+
+<div class="flex flex-col gap-[40px]">
+  <h2 class="text-navy heading-2-bold text-center" data-reveal>What Families Are Saying</h2>
+
+  <div class="testimonials-pages-{{ uid }}">
+    {%- for page in pages %}
+    {%- set pageIndex = loop.index0 %}
+    <div class="testimonials-bubbles-{{ uid }} flex flex-wrap justify-center gap-x-[24px] gap-y-[32px]{% if not loop.first %} hidden{% endif %}"
+      data-testimonial-page>
+      {%- for testimonial in page %}
+      {%- set absIndex = (pageIndex * 8) + loop.index0 %}
+      {%- set colorClass = ["bg-white", "bg-terqoise/15", "bg-purple/15", "bg-orange/15"][absIndex % 4] %}
+      {%- set rotateClass = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"][absIndex % 4] %}
+      <div data-reveal data-reveal-delay="{{ (loop.index0 % 4) * 100 }}">
+        <div class="testimonial-bubble-{{ uid }} {{ colorClass }} {{ rotateClass }} rounded-[20px] py-[18px] px-[24px] max-w-[260px]">
+          <p class="body-medium text-navy">&ldquo;{{ testimonial.snippet }}&rdquo;</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </div>
+
+  {%- if pages.length > 1 %}
+  <div class="flex justify-center items-center gap-[16px] testimonials-nav-{{ uid }}">
+    <button type="button" data-testimonial-prev aria-label="Previous testimonials">
+      <img src="/assets/svgs/chevron-left.svg" alt="">
+    </button>
+    <div class="flex gap-[8px]">
+      {%- for page in pages %}
+      <button type="button" data-testimonial-dot aria-current="{% if loop.first %}true{% else %}false{% endif %}"
+        aria-label="Show testimonials page {{ loop.index }}"></button>
+      {%- endfor %}
+    </div>
+    <button type="button" data-testimonial-next aria-label="Next testimonials">
+      <img src="/assets/svgs/chevron-right.svg" alt="">
+    </button>
+  </div>
+  {%- endif %}
+</div>
+
+{%- if pages.length > 1 %}
+<script>
+  (function () {
+    var uid = '{{ uid }}';
+    var nav = document.querySelector('.testimonials-nav-' + uid);
+    var pagesContainer = document.querySelector('.testimonials-pages-' + uid);
+    var pagesEls = Array.prototype.slice.call(document.querySelectorAll('.testimonials-pages-' + uid + ' [data-testimonial-page]'));
+    if (!nav || !pagesEls.length) return;
+
+    // Measure every page's natural height while they're all still visible (before any
+    // get hidden below), so the container can be pinned to the tallest one — otherwise
+    // switching to a shorter page (e.g. a trailing page with fewer items) would shrink
+    // the section and shift everything below it.
+    var maxHeight = pagesEls.reduce(function (max, page) {
+      return Math.max(max, page.offsetHeight);
+    }, 0);
+    pagesContainer.style.minHeight = maxHeight + 'px';
+
+    var dots = Array.prototype.slice.call(nav.querySelectorAll('[data-testimonial-dot]'));
+    var prevBtn = nav.querySelector('[data-testimonial-prev]');
+    var nextBtn = nav.querySelector('[data-testimonial-next]');
+    var current = 0;
+
+    function show(index) {
+      current = index;
+      pagesEls.forEach(function (page, i) { page.classList.toggle('hidden', i !== index); });
+      dots.forEach(function (dot, i) { dot.setAttribute('aria-current', i === index ? 'true' : 'false'); });
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === pagesEls.length - 1;
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { show(i); });
+    });
+    prevBtn.addEventListener('click', function () { if (current > 0) show(current - 1); });
+    nextBtn.addEventListener('click', function () { if (current < pagesEls.length - 1) show(current + 1); });
+
+    show(0);
+  })();
+</script>
+{%- endif %}
+{%- endif %}

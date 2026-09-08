@@ -10,7 +10,6 @@ export default {
   email: "itav.sleep@gmail.com",
   social: {
     instagram: "https://www.instagram.com/ittakesavillage_baby_sleep/",
-    facebook: "https://facebook.com/example",
     tiktok: "https://www.tiktok.com/@ittakesavillagebabysleep"
   }
 };

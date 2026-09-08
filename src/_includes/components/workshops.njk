@@ -1,0 +1,176 @@
+{%- set uid = id | default("workshops") %}
+{%- set isCream = variant == "cream" %}
+{%- set cardBg = 'bg-cream' if isCream else 'bg-navy' %}
+{%- set cardText = 'text-navy' if isCream else 'text-cream' %}
+{%- set outlineButtonClasses = 'button-outline' if isCream else 'border border-cream text-cream font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-cream hover:text-navy transition-colors duration-300 cursor-pointer' %}
+{%- set checkCircleBg = 'bg-[#E6E3D1]' if isCream else 'bg-[#012236]' %}
+{%- set checkFill = '#012d48' if isCream else '#f4f1e1' %}
+
+<style>
+  .swiperWorkshops-{{ uid }} {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiperWorkshops-{{ uid }} .swiper-wrapper {
+    align-items: stretch !important;
+  }
+
+  .swiperWorkshops-{{ uid }} .swiper-slide {
+    width: 485px;
+    height: auto !important;
+  }
+
+  @media (max-width: 768px) {
+    .swiperWorkshops-{{ uid }} .swiper-slide {
+      width: 100%;
+    }
+  }
+
+  .workshops-nav-{{ uid }} .swiper-button-next::after,
+  .workshops-nav-{{ uid }} .swiper-button-prev::after {
+    content: none;
+  }
+
+  .workshops-nav-{{ uid }} .swiper-button-next,
+  .workshops-nav-{{ uid }} .swiper-button-prev {
+    position: static;
+    transform: none;
+    inset: auto;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background-color: #E6E3D1;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .workshops-nav-{{ uid }} .swiper-button-next img,
+  .workshops-nav-{{ uid }} .swiper-button-prev img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .workshops-tooltip-{{ uid }} {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+  }
+
+  .workshops-tooltip-trigger-{{ uid }}:hover+.workshops-tooltip-{{ uid }},
+  .workshops-tooltip-trigger-{{ uid }}:focus-visible+.workshops-tooltip-{{ uid }},
+  .workshops-tooltip-{{ uid }}:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+</style>
+
+    <div class="swiper swiperWorkshops-{{ uid }}">
+      <div class="swiper-wrapper">
+        {%- for workshop in workshops %}
+        {%- if not workshop.comingSoon %}
+        <div class="swiper-slide">
+          <div class="{{ cardBg }} rounded-[10px] py-[20px] px-[30px] h-full w-full" data-reveal
+            data-reveal-delay="{{ (loop.index0 % 3) * 100 }}">
+            <div class="flex flex-col gap-[20px] justify-between h-full">
+              <div class="flex flex-col gap-[20px]">
+                <div class="flex flex-col gap-[10px]">
+                  <h3 class="heading-5-bold {{ cardText }}">{{ workshop.name }}</h3>
+                  <h3 class="heading-6-normal {{ cardText }}">{{ workshop.age }}</h3>
+                  <h3 class="heading-6-normal {{ cardText }}">{{ workshop.price }}</h3>
+                </div>
+                <ul class="flex flex-col gap-[10px]">
+                  {%- if workshop.features %}
+                  {%- for feature in workshop.features %}
+                  <li class="flex gap-[5px]">
+                    <span aria-hidden="true"
+                      class="w-[24px] h-[24px] {{ checkCircleBg }} rounded-full p-[4px] flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="{{ checkFill }}" class="w-full h-full">
+                        <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                      </svg>
+                    </span>
+                    <p class="body-text {{ cardText }}">{{ feature }}</p>
+                  </li>
+                  {%- endfor %}
+                  {%- endif %}
+                  {%- if workshop.extras %}
+                  {%- for extra in workshop.extras %}
+                  <li>
+                    <p class="body-text {{ cardText }}">{{ extra }}</p>
+                  </li>
+                  {%- endfor %}
+                  {%- endif %}
+                </ul>
+              </div>
+              <div class="flex flex-col gap-[20px]">
+                <p class="small {{ cardText }}">{{ workshop.description }}</p>
+                <div class="flex gap-[10px]">
+                  <a href="{{ workshop.url }}" target="_blank" rel="noopener noreferrer"
+                    class="button-primary text-center flex-1 min-w-0">Book Now</a>
+                  <button type="button" data-modal-open="{{ uid }}-{{ loop.index0 }}"
+                    class="{{ outlineButtonClasses }} text-center flex-1 min-w-0">More Info</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+  <div class="flex justify-between items-center gap-[40px] workshops-nav-{{ uid }}">
+    <div class="relative flex items-center">
+      <button type="button" class="workshops-tooltip-trigger-{{ uid }} flex items-center justify-center w-[24px] h-[24px] rounded-full border {{ 'border-navy text-navy' if isCream else 'border-white text-white' }} text-xs font-bold cursor-pointer"
+        aria-describedby="workshops-tooltip-{{ uid }}">
+        i
+        <span class="sr-only">Workshop information</span>
+      </button>
+      <div id="workshops-tooltip-{{ uid }}" role="tooltip"
+        class="workshops-tooltip-{{ uid }} absolute top-full left-0 mt-[10px] w-[500px] max-w-[90vw] flex flex-col gap-[8px] bg-cream rounded-[8px] p-[15px] shadow-lg transition-all duration-200 z-10">
+        <p class="text-xs text-navy whitespace-normal lg:whitespace-nowrap">* Prices are shown in GBP (£), but will be charged as the currency equivalent</p>
+        <p class="text-xs text-navy whitespace-normal lg:whitespace-nowrap">* All workshops are standalone and cannot be used to upgrade to a package</p>
+      </div>
+    </div>
+    <div class="flex justify-end gap-[10px] pt-[20px]">
+      <button class="swiper-button-prev" type="button">
+        <img src="/assets/svgs/chevron-left.svg" alt="Previous package">
+      </button>
+      <button class="swiper-button-next" type="button">
+        <img src="/assets/svgs/chevron-right.svg" alt="Next package">
+      </button>
+    </div>
+  </div>
+
+{%- for workshop in workshops %}
+{%- if not workshop.comingSoon %}
+{%- set modalId = uid ~ "-" ~ loop.index0 %}
+{%- set entry = workshop %}
+{% include "components/workshop-modal.njk" %}
+{%- endif %}
+{%- endfor %}
+
+{% include "components/modal-assets.njk" %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  (function () {
+    var uid = '{{ uid }}';
+    var container = '.swiperWorkshops-' + uid;
+    var nav = '.workshops-nav-' + uid;
+
+    new Swiper(container, {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      navigation: {
+        nextEl: nav + ' .swiper-button-next',
+        prevEl: nav + ' .swiper-button-prev',
+      },
+    });
+  })();
+</script>

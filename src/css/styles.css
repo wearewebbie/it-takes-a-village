@@ -5,8 +5,8 @@
     --color-navy: #012d48;
     --color-terqoise: #6fcec6;
     --color-white: #fff;
-    --color-5: #;
-    --color-6: #;
+    --color-purple: #a78bd6;
+    --color-orange: #f4b563;
 }
 
 @layer utilities {
@@ -43,8 +43,13 @@
         all: revert;
     }
 
+    html {
+        overflow-x: hidden;
+    }
+
     body {
         font-family: "Solway", sans-serif;
+        overflow-x: hidden;
     }
 
 
@@ -351,6 +356,10 @@
         @apply bg-terqoise text-white font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-navy transition-colors duration-300 cursor-pointer;
     }
 
+     .button-outline {
+        @apply border border-navy text-navy font-bold py-[12px] px-[24px] rounded-[4px] hover:bg-navy hover:text-white transition-colors duration-300 cursor-pointer;
+    }
+
     .nav-link-active {
         @apply text-terqoise;
     }
@@ -412,4 +421,38 @@
 
 [data-accordion-content] {
     max-height: 0px;
+}
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal="left"] {
+    transform: translateX(-40px);
+}
+
+[data-reveal="right"] {
+    transform: translateX(40px);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Swiper containers clip overflow tightly to slide height, so a translating
+   reveal gets cut off at the bottom/side instead of sliding smoothly.
+   Fade-only inside carousels avoids the clipped "grows into view" artifact. */
+.swiper [data-reveal] {
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }

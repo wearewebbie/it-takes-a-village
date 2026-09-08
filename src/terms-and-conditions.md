@@ -32,9 +32,9 @@ You agree to use this website only for lawful purposes and in a way that does no
 
 All content on this website, including but not limited to text, images, graphics, logos, and design, is the property of {{ site.title }} and is protected by applicable intellectual property laws. You may not reproduce, distribute, or use any content from this website without our prior written permission.
 
-## 5. Contact Form
+## 5. Contacting Us
 
-This website includes a contact form which allows you to send us an enquiry. By submitting any forms you agree to provide accurate and truthful information. We will use the information you provide solely to respond to your enquiry. Please refer to our [Privacy Policy]({{ site.url }}/privacy-policy/) for full details of how your data is handled.
+If you contact us, for example by email, you agree to provide accurate and truthful information. We will use the information you provide solely to respond to your enquiry. Please refer to our [Privacy Policy]({{ site.url }}/privacy-policy/) for full details of how your data is handled.
 
 ## 6. Accuracy of Information
 

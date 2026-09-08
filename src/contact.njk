@@ -1,6 +1,24 @@
 ---
 layout: base/base.njk
-title: ""
-description: ""
+title: "Contact"
+description: "Get in touch with It Takes a Village."
 ---
-<section>Contact</section>
+
+<section class="pt-[180px] pb-[180px] sticky top-0 z-5 bg-cream">
+    <div class="container">
+        <div class="flex flex-col items-center">
+            <h1 class="text-navy heading-1-bold" data-reveal>Contact</h1>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-[80px] relative z-10 mb-[656px] sm:mb-[464px]">
+    <div class="container">
+        <div class="flex flex-col gap-[20px] items-center text-center" data-reveal>
+            <p class="body text-navy max-w-xl">
+                Have a question or want to get in touch? Drop us an email and we'll get back to you as soon as we can.
+            </p>
+            <a href="mailto:{{ site.email }}" class="button-primary">{{ site.email }}</a>
+        </div>
+    </div>
+</section>

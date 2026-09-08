@@ -20,6 +20,8 @@ export default function (eleventyConfig) {
             widths = [400, 800, 1200],
             formats = ['avif', 'webp', 'jpeg'],
             sizes = '100vw',
+            loading = 'lazy',
+            fetchpriority,
         } = options;
 
         const metadata = await Image(src, {
@@ -37,14 +39,19 @@ export default function (eleventyConfig) {
             alt,
             class: cls,
             sizes,
-            loading: 'lazy',
+            loading,
             decoding: 'async',
+            ...(fetchpriority ? { fetchpriority } : {}),
         });
     });
 
     eleventyConfig.addFilter("lastModifiedDate", function (filePath) {
         const stats = fs.statSync(filePath);
         return stats.mtime.toISOString().split("T")[0];
+    });
+
+    eleventyConfig.addFilter("byType", function (arr, type) {
+        return (arr || []).filter(item => item.type === type);
     });
 
     eleventyConfig.addLiquidFilter("dateFormat", function (date) {
@@ -62,6 +69,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/svgs");
     eleventyConfig.addPassthroughCopy("src/assets/videos");
     eleventyConfig.addPassthroughCopy("src/assets/images/website-preview-image.png");
+    eleventyConfig.addPassthroughCopy("src/assets/favicon");
 
     return {
         dir: {
