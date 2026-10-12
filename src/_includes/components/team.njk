@@ -63,8 +63,59 @@
 </style>
 
 {%- set uid = id | default("team") %}
+{%- set featuredMembers = team | selectattr("featured") %}
+{%- set otherMembers = team | rejectattr("featured") %}
 
-<div class="flex flex-col gap-[30px]">
+<!-- Featured member: pulled out of the card row into their own section -->
+<section class="bg-white py-[80px] relative z-10">
+  <div class="container">
+    {%- for member in featuredMembers %}
+    {%- if member.bio.length > 0 and member.image %}
+    <div class="flex flex-col md:flex-row items-center gap-[30px] md:gap-[50px]">
+      <div class="flex justify-center md:flex-1">
+        <div data-reveal="left"
+          class="relative flex-shrink-0 -rotate-3 w-[220px] md:w-[264px] lg:w-[308px] aspect-[3/4] border-[10px] lg:border-[15px] border-navy rounded-[10px] overflow-hidden shadow-lg bg-cream flex items-end justify-center">
+          {% image member.image, "Portrait of " + member.name, "w-full h-auto max-h-[400px] object-contain pt-[20px]
+          px-[20px]", { loading: "eager", fetchpriority: "high", sizes: "(min-width: 1024px) 308px, (min-width: 768px) 264px, 220px" } %}
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-[20px] md:flex-1" data-reveal="right" data-reveal-delay="100">
+        <div class="flex flex-col gap-[10px]">
+          <h2 class="text-navy heading-4-bold">{{ member.name }}</h2>
+          <p class="text-navy body-text font-medium">{{ member.role }}</p>
+          {%- if member.tags.length > 0 %}
+          <div class="flex flex-wrap gap-[8px]">
+            {%- for tag in member.tags %}
+            <span class="inline-block bg-terqoise text-white small-light px-[12px] py-[4px] rounded-full w-fit">{{ tag }}</span>
+            {%- endfor %}
+          </div>
+          {%- endif %}
+        </div>
+        {%- if member.summary %}
+        <p class="body-text text-navy">{{ member.summary }}</p>
+        <button type="button" class="body-bold text-navy underline cursor-pointer w-fit"
+          data-team-modal-open="{{ uid }}" data-name="{{ member.name }}"
+          aria-haspopup="dialog">Read more<span class="sr-only"> about {{ member.name }}</span></button>
+        {%- else %}
+        {%- for paragraph in member.bio %}
+        <p class="body-text text-navy">{{ paragraph }}</p>
+        {%- endfor %}
+        {%- endif %}
+      </div>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+
+  <div class="absolute top-[-100px] left-0 w-screen h-[100px] overflow-hidden">
+    <img src="/assets/svgs/section-cloud.svg" aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-top">
+  </div>
+</section>
+
+<!-- Remaining team cards -->
+<section class="bg-white py-[80px] relative z-10 flex flex-col gap-[30px]">
   <div class="container">
     <div class="flex flex-col gap-[20px]">
       <h2 class="text-terqoise heading-2-bold text-center" data-reveal>Meet our Sleep Consultants</h2>
@@ -80,8 +131,8 @@
   <div class="md:hidden" data-reveal data-reveal-delay="200">
     <div class="swiper swiperTeam-{{ uid }} py-[40px]">
       <div class="swiper-wrapper">
-        {%- for member in team %}
-        {%- if member.bio.length > 0 %}
+        {%- for member in otherMembers %}
+        {%- if member.bio.length > 0 and member.image %}
         <div class="swiper-slide">
           <div
             class="relative aspect-[3/4] border-t-[10px] border-r-[10px] border-l-[10px] border-navy rounded-[10px] overflow-hidden shadow-lg mx-auto cursor-pointer bg-cream flex items-end justify-center"
@@ -108,8 +159,8 @@
     <div class="hidden md:flex items-center justify-center py-[40px] -space-x-[40px]" data-reveal
       data-reveal-delay="200">
       {%- set rotations = ["-3deg", "1.5deg", "-1deg", "2deg", "-2deg"] %}
-      {%- for member in team %}
-      {%- if member.bio.length > 0 %}
+      {%- for member in otherMembers %}
+      {%- if member.bio.length > 0 and member.image %}
       <div
         class="team-card relative flex-shrink-0 w-[180px] lg:w-[260px] aspect-[3/4] border-[10px] lg:border-[15px] border-navy rounded-[10px] overflow-hidden shadow-lg cursor-pointer transition-all duration-300 bg-cream flex items-end justify-center"
         style="--rotation: {{ rotations[loop.index0 % rotations.length] }};" data-team-card="{{ uid }}"
@@ -125,10 +176,10 @@
       class="pointer-events-none fixed hidden rounded-full bg-white px-[16px] py-[8px] text-sm text-navy shadow-md z-50">
     </div>
   </div>
-</div>
+</section>
 
 {%- for member in team %}
-{%- if member.bio.length > 0 %}
+{%- if member.bio.length > 0 and member.image %}
 <dialog id="modal-{{ uid }}-{{ member.name | lower }}"
   class="w-full h-full md:w-auto md:h-auto md:max-w-[900px] md:max-h-[600px] md:rounded-[20px] p-[30px] md:pb-[30px] m-0 md:m-auto backdrop:bg-black/50">
   <div class="flex flex-col md:flex-row gap-[24px] h-full">
@@ -148,8 +199,13 @@
               class="cursor-pointer text-navy text-2xl leading-none w-[44px] h-[44px] bg-black/5 rounded-[5px] hidden md:flex items-center justify-center ml-auto">&times;</button>
           </div>
           <p class="text-navy body-text font-medium">{{ member.role }}</p>
-          <span class="inline-block bg-terqoise text-white small-light px-[12px] py-[4px] rounded-full w-fit">OCN Level
-            6 Qualified</span>
+          {%- if member.tags.length > 0 %}
+          <div class="flex flex-wrap gap-[8px]">
+            {%- for tag in member.tags %}
+            <span class="inline-block bg-terqoise text-white small-light px-[12px] py-[4px] rounded-full w-fit">{{ tag }}</span>
+            {%- endfor %}
+          </div>
+          {%- endif %}
         </div>
         {%- for paragraph in member.bio %}
         <p class="body-text">{{ paragraph }}</p>
@@ -173,6 +229,14 @@
       spaceBetween: 16,
     });
 
+    function openTeamModal(name) {
+      var modal = document.getElementById('modal-' + uid + '-' + name.toLowerCase());
+      if (modal) {
+        modal.showModal();
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
     var label = document.getElementById('team-cursor-label-' + uid);
     document.querySelectorAll('[data-team-card="' + uid + '"]').forEach(function (card) {
       card.addEventListener('mouseenter', function () {
@@ -188,11 +252,13 @@
       });
       card.addEventListener('click', function () {
         label.classList.add('hidden');
-        var modal = document.getElementById('modal-' + uid + '-' + card.dataset.name.toLowerCase());
-        if (modal) {
-          modal.showModal();
-          document.body.style.overflow = 'hidden';
-        }
+        openTeamModal(card.dataset.name);
+      });
+    });
+
+    document.querySelectorAll('[data-team-modal-open="' + uid + '"]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openTeamModal(btn.dataset.name);
       });
     });
 
